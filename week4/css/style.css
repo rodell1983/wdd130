@@ -5,9 +5,7 @@ body {
   margin: 0;
   padding: 0;
 }
-main {
-  padding: 0.5rem;
-}
+
 header,
 footer {
   padding: 1rem;
@@ -17,19 +15,27 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
 header {
   grid-template-columns: 200px 1fr;
 }
+
+main {
+  padding: 0.5rem;
+}
+
 footer {
   grid-template-columns: 65% 1fr;
 }
+
 h1 {
   color: #053c55;
   font-size: 2.2rem;
 }
+
 h2 {
   color: #053c55;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 ul {
