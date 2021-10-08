@@ -8,7 +8,6 @@ body {
 
 header,
 footer {
-  padding: 1rem;
   background-color: #053c55;
   color: #ffffff;
   display: grid;
@@ -17,6 +16,7 @@ footer {
 }
 
 header {
+  padding: 1rem;
   grid-template-columns: 200px 1fr;
 }
 
@@ -26,6 +26,7 @@ main {
 
 footer {
   grid-template-columns: 65% 1fr;
+  padding-left: 1rem;
 }
 
 h1 {
@@ -73,7 +74,6 @@ li a:hover {
 .social {
   width: 95%;
   display: flex;
-  grid-template-columns: 100px 1fr;
   flex-direction: row;
   justify-content: right;
 }
