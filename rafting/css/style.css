@@ -47,6 +47,9 @@ h2 {
 }
 
 ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -54,9 +57,6 @@ ul {
   background-color: #053c55;
 }
 
-li {
-  float: left;
-}
 li a {
   display: block;
   color: white;
