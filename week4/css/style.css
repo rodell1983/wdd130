@@ -30,6 +30,10 @@ footer {
   padding-left: 1rem;
 }
 
+picture {
+  object-fit: scale-down;
+}
+
 h1 {
   color: #053c55;
   font-size: 2.2rem;
