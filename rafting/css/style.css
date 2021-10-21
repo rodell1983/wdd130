@@ -39,11 +39,13 @@ h1 {
   color: #053c55;
   font-size: 2.2rem;
   line-height: 2em;
+  font-weight: 900
 }
 
 h2 {
   color: #053c55;
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 ul {
