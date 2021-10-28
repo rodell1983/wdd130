@@ -43,6 +43,7 @@ h1 {
   font-size: 2.2rem;
   line-height: 2em;
   font-weight: 900;
+  text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.438);;
 }
 
 h2 {
@@ -53,6 +54,7 @@ h2 {
   border-top: 1px solid #053c55;
   padding: 1rem;
   background-image: linear-gradient(#ffffff, lightgray);
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);;
 }
 
 picture {
@@ -94,6 +96,7 @@ img {
 .main-menu {
   border-bottom: 2px solid #ffffff;
   border-top: 1px solid #ffffff;
+  background-image: linear-gradient(#226cb1, #053c55);
 }
 
 .main-menu li a,
@@ -107,7 +110,7 @@ img {
 
 .main-menu li a:hover {
   background-color: #226cb1;
-
+  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.2);
 }
 
 .banner {
