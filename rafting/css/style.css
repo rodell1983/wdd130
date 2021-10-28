@@ -81,7 +81,7 @@ h2 {
   height: auto;
 }
 
-.main-menu {
+.main-menu, .social-menu {
 
   display: flex;
   flex-direction: row;
@@ -91,16 +91,20 @@ h2 {
   overflow: hidden;
   background-color: #053c55;
   padding: 0;
+
 }
 
-.main-menu li a {
+.main-menu {
+  border-bottom: 2px solid #ffffff;
+  border-top: 1px solid #ffffff;
+}
+
+.main-menu li a, .social-menu li a {
   display: block;
   color: white;
   text-align: center;
   padding: 10px;
   text-decoration: none;
-  border-bottom: 2px solid #ffffff;
-  border-top: 1px solid #ffffff;
 }
 
 .main-menu li a:hover {
@@ -114,6 +118,7 @@ h2 {
 }
 
 .banner-button {
+  display: grid;
   width: 300px;
   height: 150px;
   right: 30px;
@@ -124,10 +129,13 @@ h2 {
   opacity: 0.9;
   border-radius: 8px;
   text-align: center;
+  justify-items: center;
 }
 .banner-button button{
   background-color: #053c55;
   color: #ffffff;
+  font-size: 1.2rem;
+  width: 50%;
 }
 
 .banner-button button:hover{
