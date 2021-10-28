@@ -4,6 +4,7 @@ body {
   line-height: 1.5em;
   background-color: lightgray;
   color: #000000;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
 }
@@ -43,7 +44,7 @@ h1 {
   font-size: 2.2rem;
   line-height: 2em;
   font-weight: 900;
-  text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.438);;
+  text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.438);
 }
 
 h2 {
@@ -53,13 +54,7 @@ h2 {
   border-bottom: 2px solid #053c55;
   border-top: 1px solid #053c55;
   padding: 1rem;
-  background-image: linear-gradient(#fff, lightgray,lightgray);
-  
-}
-
-picture {
-  width: 100%;
-  object-fit: cover;
+  background: linear-gradient(#fff, lightgray, lightgray);
 }
 
 img {
@@ -84,19 +79,18 @@ img {
 .main-menu,
 .social-menu {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: center;
   list-style-type: none;
   margin: 0;
   overflow: hidden;
-  background-color: #053c55;
   padding: 0;
 }
 
 .main-menu {
   border-bottom: 2px solid #ffffff;
   border-top: 1px solid #ffffff;
-  background-image: linear-gradient(#226cb1, #053c55);
+  background: linear-gradient(#226cb1, #053c55);
 }
 
 .main-menu li a,
@@ -119,11 +113,16 @@ img {
   grid-area: banner;
 }
 
-.banner-button {
+.banner picture {
+  width: 100%;
+  object-fit: cover;
+}
+
+.banner-popup {
   border: 1px solid lightgray;
   display: grid;
   width: 300px;
-  right: 2rem;
+  right: 1rem;
   top: 1rem;
   position: absolute;
   background-color: #ffffff;
@@ -132,22 +131,21 @@ img {
   border-radius: 8px;
   text-align: center;
   justify-items: center;
-  resize: vertical;
 }
 
-.banner-button button {
+.banner-popup button {
   background-color: #053c55;
   color: #ffffff;
   font-size: 1.2rem;
   width: 50%;
 }
 
-.banner-button button:hover {
+.banner-popup button:hover {
   background-color: #226cb1;
   color: #ffffff;
 }
 
-.banner-button:hover {
+.banner-popup:hover {
   font-weight: bolder;
   box-shadow: 2px 2px 2px 2px rgba(210, 210, 210, 0.438);
 }
@@ -160,18 +158,20 @@ img {
 .home-section1 {
   grid-area: home-section1;
 }
+
 .home-section1-pic {
   grid-area: home-section1-pic;
-  display: flex;
+  display: grid;
   align-items: center;
 }
 
 .home-section2 {
   grid-area: home-section2;
+  box-sizing: border-box;
 }
 .home-section2-pic {
   grid-area: home-section2-pic;
-  display: flex;
+  display: grid;
   align-items: center;
 }
 
