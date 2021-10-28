@@ -53,8 +53,8 @@ h2 {
   border-bottom: 2px solid #053c55;
   border-top: 1px solid #053c55;
   padding: 1rem;
-  background-image: linear-gradient(#ffffff, lightgray);
-  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);;
+  background-image: linear-gradient(#fff, lightgray,lightgray);
+  
 }
 
 picture {
