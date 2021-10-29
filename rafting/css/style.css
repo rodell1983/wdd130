@@ -26,7 +26,7 @@ header {
 
 header h1 {
   color: #053c55;
-  font-size: 0;
+  font-size: 0.01rem;
 }
 
 main {
@@ -82,7 +82,6 @@ h2 {
   list-style-type: none;
   margin: 0;
   overflow: hidden;
-  padding: 0;
 }
 
 .main-menu {
@@ -178,8 +177,4 @@ h2 {
 .home-section3 {
   grid-area: home-section3;
   text-align: center;
-}
-
-.social {
-  justify-content: right;
 }
