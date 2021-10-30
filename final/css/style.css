@@ -1,0 +1,90 @@
+body {
+  background-color: #d0eaff;
+  color: #606060;
+  font-family: 'Noticia Text', Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+header,
+footer {
+  justify-content: center;
+  align-content: center;
+  background-color: #336699;
+  color: #fff;
+  padding: 1rem .5rem;
+}
+
+main {
+  padding: 3rem;
+}
+
+h1 {
+  background-color: #336699;
+  color: #fff;
+}
+
+h3 {
+  background-color: #800000;
+  color: #fff;
+  padding: 1rem;
+}
+
+footer {
+    height: 50px;
+}
+
+/* Classes */
+
+.page {
+  max-width: 900px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.color1,
+.color2,
+.color3,
+.color4,
+.color5 {
+  width: 100px;
+  height: 50px;
+
+}
+
+.color1 p,
+.color3 p,
+.color5 p {
+  text-align: center;
+  color: #fff;
+}
+
+.color2 p,
+.color4 p {
+  text-align: center;
+  color: #606060;
+}
+
+.color1 {
+  background-color: #606060;
+}
+
+.color2 {
+  background-color: #ececec;
+}
+
+.color3 {
+  background-color: #800000;
+}
+
+.color4 {
+  background-color: #d0eaff;
+}
+
+.color5 {
+  background-color: #336699;
+}

@@ -152,7 +152,9 @@ h2 {
   box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
 }
 
-.home-section1 p, .home-section2 p, .home-section3 p {
+.home-section1 p,
+.home-section2 p,
+.home-section3 p {
   padding: 1rem;
 }
 
