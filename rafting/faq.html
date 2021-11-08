@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robs River Rafting</title>
+    <meta
+      name="description"
+      content="Robs River Rafting provides whitewater rafting trip on
+    multiple rivers in the state of Idaho. Trips are privided for multiple skill
+    levels"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+        function selectAll() {
+          var checkBox = document.getElementById("select-all");
+    
+          if (checkBox.checked == true) {
+            document.getElementById("sel-price").value = "all";
+            document.getElementById("sel-duration").value = "all";
+            document.getElementById("sel-skill").value = "all";
+            document.getElementById("sel-river").value = "all";
+            displayTrips();
+          } else {
+            if (
+              document.getElementById("sel-price").value == "all" &&
+              document.getElementById("sel-duration").value == "all" &&
+              document.getElementById("sel-skill").value == "all" &&
+              document.getElementById("sel-river").value == "all"
+            ) {
+              checkBox.checked = true;
+            }
+          }
+        }
+        function displayTrips() {
+          displayAllRiverTrips(true);
+    
+          displayDurationTrips();
+          displayPriceTrips();
+          displaySkillTrips();
+          displayLocationTrips();
+    
+          var checkBox = document.getElementById("select-all");
+          if (
+            document.getElementById("sel-price").value == "all" &&
+            document.getElementById("sel-duration").value == "all" &&
+            document.getElementById("sel-skill").value == "all" &&
+            document.getElementById("sel-river").value == "all"
+          ) {
+            checkBox.checked = true;
+          }
+        }
+    
+        function displayAllRiverTrips(show) {
+          var els = document.getElementsByClassName("river-trip");
+          for (var i = 0; i < els.length; i++) {
+            var ele = document.getElementsByClassName("river-trip")[i];
+            if (show) {
+              ele.style.display = "grid";
+            } else {
+              ele.style.display = "none";
+            }
+          }
+        }
+    
+        function displayByClass(show, name) {
+          var els = document.getElementsByClassName(name);
+          for (var i = 0; i < els.length; i++) {
+            var ele = document.getElementsByClassName(name)[i];
+            if (show) {
+              ele.style.display = "grid";
+            } else {
+              ele.style.display = "none";
+            }
+          }
+        }
+    
+        function displayPriceTrips() {
+          id = document.getElementById("sel-price").value;
+    
+          if (id == "all") {
+            return true;
+          } else if (id == "low-price") {
+            displayByClass(false, "med-price");
+            displayByClass(false, "high-price");
+          } else if (id == "med-price") {
+            displayByClass(false, "low-price");
+            displayByClass(false, "high-price");
+          } else if (id == "high-price") {
+            displayByClass(false, "low-price");
+            displayByClass(false, "med-price");
+          }
+          var checkBox = document.getElementById("select-all");
+          checkBox.checked = false;
+        }
+    
+        function displaySkillTrips() {
+          id = document.getElementById("sel-skill").value;
+    
+          if (id == "all") {
+            return true;
+          } else if (id == "novice") {
+            displayByClass(false, "intermediate");
+            displayByClass(false, "advanced");
+          } else if (id == "intermediate") {
+            displayByClass(false, "novice");
+            displayByClass(false, "advanced");
+          } else if (id == "advanced") {
+            displayByClass(false, "novice");
+            displayByClass(false, "intermediate");
+          }
+          var checkBox = document.getElementById("select-all");
+          checkBox.checked = false;
+        }
+    
+        function displayDurationTrips() {
+          id = document.getElementById("sel-duration").value;
+    
+          if (id == "all") {
+            return true;
+          } else if (id == "one-day") {
+            displayByClass(false, "three-day");
+            displayByClass(false, "week");
+          } else if (id == "three-day") {
+            displayByClass(false, "one-day");
+            displayByClass(false, "week");
+          } else if (id == "week") {
+            displayByClass(false, "one-day");
+            displayByClass(false, "three-day");
+          }
+          var checkBox = document.getElementById("select-all");
+          checkBox.checked = false;
+        }
+    
+        function displayLocationTrips() {
+          id = document.getElementById("sel-river").value;
+    
+          if (id == "all") {
+            return true;
+          } else if (id == "salmon") {
+            displayByClass(false, "snake");
+          } else if (id == "snake") {
+            displayByClass(false, "salmon");
+          }
+          var checkBox = document.getElementById("select-all");
+          checkBox.checked = false;
+        }
+
+        function sidebarClick() {
+
+            document.getElementById("sidebar").style.width = "0px";
+            //document.getElementById("main").style.marginLeft = "0px";
+        }
+      </script>
+  </head>
+  <body>
+      
+    <div class="page-faq">
+      <header>
+        <h1>
+          Robs River Rafting
+          <a href="index.html" title="Home">
+            <img class="logo" src="images/logo.png" alt="Robs River Rafting" />
+          </a>
+        </h1>
+        <nav>
+          <ul class="main-menu">
+            <li>
+              <a href="index.html" title="Home">Home</a>
+            </li>
+            <li>
+              <a href="river.html" title="River Trips">River Trips</a>
+            </li>
+            <li>
+              <a href="faq.html" title="FAQ">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+       
+      </main>
+      <footer>
+        <p>&#169; 2021 Robs River Rafting - Robert Odell - WDD130</p>
+        <div class="social">
+          <ul class="social-menu">
+            <li>
+              <a
+                href="https://facebook.com"
+                title="Facebook"
+                target="_blank"
+                rel="noopener"
+              >
+                <img src="images/facebook.png" alt="facebook.com" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com"
+                title="Twitter"
+                target="_blank"
+                rel="noopener"
+              >
+                <img src="images/twitter.png" alt="twitter.com" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com"
+                title="Instagram"
+                target="_blank"
+                rel="noopener"
+              >
+                <img src="images/instagram.png" alt="instagram.com" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
