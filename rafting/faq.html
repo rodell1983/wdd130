@@ -19,35 +19,16 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <script>
-        function selectAll() {
-          var checkBox = document.getElementById("select-all");
-    
-          if (checkBox.checked == true) {
-            document.getElementById("sel-price").value = "all";
-            document.getElementById("sel-duration").value = "all";
-            document.getElementById("sel-skill").value = "all";
-            document.getElementById("sel-river").value = "all";
-            displayTrips();
-          } else {
-            if (
-              document.getElementById("sel-price").value == "all" &&
-              document.getElementById("sel-duration").value == "all" &&
-              document.getElementById("sel-skill").value == "all" &&
-              document.getElementById("sel-river").value == "all"
-            ) {
-              checkBox.checked = true;
-            }
-          }
-        }
-        function displayTrips() {
-          displayAllRiverTrips(true);
-    
-          displayDurationTrips();
-          displayPriceTrips();
-          displaySkillTrips();
-          displayLocationTrips();
-    
-          var checkBox = document.getElementById("select-all");
+      function selectAll() {
+        var checkBox = document.getElementById("select-all");
+
+        if (checkBox.checked == true) {
+          document.getElementById("sel-price").value = "all";
+          document.getElementById("sel-duration").value = "all";
+          document.getElementById("sel-skill").value = "all";
+          document.getElementById("sel-river").value = "all";
+          displayTrips();
+        } else {
           if (
             document.getElementById("sel-price").value == "all" &&
             document.getElementById("sel-duration").value == "all" &&
@@ -57,111 +38,128 @@
             checkBox.checked = true;
           }
         }
-    
-        function displayAllRiverTrips(show) {
-          var els = document.getElementsByClassName("river-trip");
-          for (var i = 0; i < els.length; i++) {
-            var ele = document.getElementsByClassName("river-trip")[i];
-            if (show) {
-              ele.style.display = "grid";
-            } else {
-              ele.style.display = "none";
-            }
-          }
-        }
-    
-        function displayByClass(show, name) {
-          var els = document.getElementsByClassName(name);
-          for (var i = 0; i < els.length; i++) {
-            var ele = document.getElementsByClassName(name)[i];
-            if (show) {
-              ele.style.display = "grid";
-            } else {
-              ele.style.display = "none";
-            }
-          }
-        }
-    
-        function displayPriceTrips() {
-          id = document.getElementById("sel-price").value;
-    
-          if (id == "all") {
-            return true;
-          } else if (id == "low-price") {
-            displayByClass(false, "med-price");
-            displayByClass(false, "high-price");
-          } else if (id == "med-price") {
-            displayByClass(false, "low-price");
-            displayByClass(false, "high-price");
-          } else if (id == "high-price") {
-            displayByClass(false, "low-price");
-            displayByClass(false, "med-price");
-          }
-          var checkBox = document.getElementById("select-all");
-          checkBox.checked = false;
-        }
-    
-        function displaySkillTrips() {
-          id = document.getElementById("sel-skill").value;
-    
-          if (id == "all") {
-            return true;
-          } else if (id == "novice") {
-            displayByClass(false, "intermediate");
-            displayByClass(false, "advanced");
-          } else if (id == "intermediate") {
-            displayByClass(false, "novice");
-            displayByClass(false, "advanced");
-          } else if (id == "advanced") {
-            displayByClass(false, "novice");
-            displayByClass(false, "intermediate");
-          }
-          var checkBox = document.getElementById("select-all");
-          checkBox.checked = false;
-        }
-    
-        function displayDurationTrips() {
-          id = document.getElementById("sel-duration").value;
-    
-          if (id == "all") {
-            return true;
-          } else if (id == "one-day") {
-            displayByClass(false, "three-day");
-            displayByClass(false, "week");
-          } else if (id == "three-day") {
-            displayByClass(false, "one-day");
-            displayByClass(false, "week");
-          } else if (id == "week") {
-            displayByClass(false, "one-day");
-            displayByClass(false, "three-day");
-          }
-          var checkBox = document.getElementById("select-all");
-          checkBox.checked = false;
-        }
-    
-        function displayLocationTrips() {
-          id = document.getElementById("sel-river").value;
-    
-          if (id == "all") {
-            return true;
-          } else if (id == "salmon") {
-            displayByClass(false, "snake");
-          } else if (id == "snake") {
-            displayByClass(false, "salmon");
-          }
-          var checkBox = document.getElementById("select-all");
-          checkBox.checked = false;
-        }
+      }
+      function displayTrips() {
+        displayAllRiverTrips(true);
 
-        function sidebarClick() {
+        displayDurationTrips();
+        displayPriceTrips();
+        displaySkillTrips();
+        displayLocationTrips();
 
-            document.getElementById("sidebar").style.width = "0px";
-            //document.getElementById("main").style.marginLeft = "0px";
+        var checkBox = document.getElementById("select-all");
+        if (
+          document.getElementById("sel-price").value == "all" &&
+          document.getElementById("sel-duration").value == "all" &&
+          document.getElementById("sel-skill").value == "all" &&
+          document.getElementById("sel-river").value == "all"
+        ) {
+          checkBox.checked = true;
         }
-      </script>
+      }
+
+      function displayAllRiverTrips(show) {
+        var els = document.getElementsByClassName("river-trip");
+        for (var i = 0; i < els.length; i++) {
+          var ele = document.getElementsByClassName("river-trip")[i];
+          if (show) {
+            ele.style.display = "grid";
+          } else {
+            ele.style.display = "none";
+          }
+        }
+      }
+
+      function displayByClass(show, name) {
+        var els = document.getElementsByClassName(name);
+        for (var i = 0; i < els.length; i++) {
+          var ele = document.getElementsByClassName(name)[i];
+          if (show) {
+            ele.style.display = "grid";
+          } else {
+            ele.style.display = "none";
+          }
+        }
+      }
+
+      function displayPriceTrips() {
+        id = document.getElementById("sel-price").value;
+
+        if (id == "all") {
+          return true;
+        } else if (id == "low-price") {
+          displayByClass(false, "med-price");
+          displayByClass(false, "high-price");
+        } else if (id == "med-price") {
+          displayByClass(false, "low-price");
+          displayByClass(false, "high-price");
+        } else if (id == "high-price") {
+          displayByClass(false, "low-price");
+          displayByClass(false, "med-price");
+        }
+        var checkBox = document.getElementById("select-all");
+        checkBox.checked = false;
+      }
+
+      function displaySkillTrips() {
+        id = document.getElementById("sel-skill").value;
+
+        if (id == "all") {
+          return true;
+        } else if (id == "novice") {
+          displayByClass(false, "intermediate");
+          displayByClass(false, "advanced");
+        } else if (id == "intermediate") {
+          displayByClass(false, "novice");
+          displayByClass(false, "advanced");
+        } else if (id == "advanced") {
+          displayByClass(false, "novice");
+          displayByClass(false, "intermediate");
+        }
+        var checkBox = document.getElementById("select-all");
+        checkBox.checked = false;
+      }
+
+      function displayDurationTrips() {
+        id = document.getElementById("sel-duration").value;
+
+        if (id == "all") {
+          return true;
+        } else if (id == "one-day") {
+          displayByClass(false, "three-day");
+          displayByClass(false, "week");
+        } else if (id == "three-day") {
+          displayByClass(false, "one-day");
+          displayByClass(false, "week");
+        } else if (id == "week") {
+          displayByClass(false, "one-day");
+          displayByClass(false, "three-day");
+        }
+        var checkBox = document.getElementById("select-all");
+        checkBox.checked = false;
+      }
+
+      function displayLocationTrips() {
+        id = document.getElementById("sel-river").value;
+
+        if (id == "all") {
+          return true;
+        } else if (id == "salmon") {
+          displayByClass(false, "snake");
+        } else if (id == "snake") {
+          displayByClass(false, "salmon");
+        }
+        var checkBox = document.getElementById("select-all");
+        checkBox.checked = false;
+      }
+
+      function sidebarClick() {
+        document.getElementById("sidebar").style.width = "0px";
+        //document.getElementById("main").style.marginLeft = "0px";
+      }
+    </script>
   </head>
   <body>
-      
     <div class="page-faq">
       <header>
         <h1>
@@ -184,9 +182,49 @@
           </ul>
         </nav>
       </header>
-      <main>
-       
-      </main>
+        <main class="faq-main">
+          <div class="faq-nav">
+            <h2>FAQ</h2>
+            <div class="faq-nav-child">
+              <img
+                class="logo"
+                src="images/logo.png"
+                alt="Robs River Rafting"
+              />
+              <h3>Safety</h3>
+            </div>
+            <div class="faq-nav-child">
+              <img
+                class="logo"
+                src="images/logo.png"
+                alt="Robs River Rafting"
+              />
+              <h3>Pricing</h3>
+            </div>
+            <div class="faq-nav-child">
+              <img
+                class="logo"
+                src="images/logo.png"
+                alt="Robs River Rafting"
+              />
+              <h3>About Us</h3>
+            </div>
+          </div>
+          <div class="faq-body">
+            <label class="faq-selected">Safety</label>
+            <div class="faq-body-safety">
+              <h2>What safety equipment is provided?</h2>
+              <p>
+                We provide only the highest grade safety equipment for our
+                trips. Every item is inspected before and after each trip and
+                adhears to all safety regulations
+              </p>
+              <h2>What happens if I get hurt?</h2>
+              <h2>Do I need to sign a waiver?</h2>
+              <h2>What is your safety record?</h2>
+            </div>
+          </div>
+        </main>
       <footer>
         <p>&#169; 2021 Robs River Rafting - Robert Odell - WDD130</p>
         <div class="social">
