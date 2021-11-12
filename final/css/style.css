@@ -35,6 +35,10 @@ footer {
     height: 50px;
 }
 
+img {
+  width: 100%;
+}
+
 /* Classes */
 
 .page {

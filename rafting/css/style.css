@@ -206,6 +206,7 @@ h3 {
 
 .river-main{
   display: grid;
+  grid-template-columns: 250px 1fr;
 }
 .river-trips {
   display: grid;
@@ -230,13 +231,12 @@ h3 {
   overflow: hidden;
   margin-right: 5px;
   grid-column: 1/2;
-  width: 250px;
-  padding: 0;
-  margin: 0;
+  column-width: 250px;
 }
 
 
 .trip-planner-box {
+  display: grid;
   padding: 1rem;
   justify-items: right;
   background-color: #fff;
@@ -268,13 +268,36 @@ h3 {
 }
 
 .faq-nav-child{
+  background-color: #226cb1;
+  color: #fff;
+  display:grid;
+  justify-items: center;
   justify-self: center;
+  align-items: center;
+  width: 200px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.faq-nav-child:hover{
+  box-shadow: 6px 6px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+.faq-nav-child img {
+  width: 100px;
 }
 
 .faq-body{
   text-align: center;
 }
 
-.faq-body label {
+.faq-body-label{
+  display: grid;
+  height: 2rem;
+  text-align:center;
   font-size: 1.5rem;
+}
+
+.active{
+  text-shadow: lightgray;
 }

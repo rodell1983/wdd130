@@ -19,57 +19,6 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <script>
-      function selectAll() {
-        var checkBox = document.getElementById("select-all");
-
-        if (checkBox.checked == true) {
-          document.getElementById("sel-price").value = "all";
-          document.getElementById("sel-duration").value = "all";
-          document.getElementById("sel-skill").value = "all";
-          document.getElementById("sel-river").value = "all";
-          displayTrips();
-        } else {
-          if (
-            document.getElementById("sel-price").value == "all" &&
-            document.getElementById("sel-duration").value == "all" &&
-            document.getElementById("sel-skill").value == "all" &&
-            document.getElementById("sel-river").value == "all"
-          ) {
-            checkBox.checked = true;
-          }
-        }
-      }
-      function displayTrips() {
-        displayAllRiverTrips(true);
-
-        displayDurationTrips();
-        displayPriceTrips();
-        displaySkillTrips();
-        displayLocationTrips();
-
-        var checkBox = document.getElementById("select-all");
-        if (
-          document.getElementById("sel-price").value == "all" &&
-          document.getElementById("sel-duration").value == "all" &&
-          document.getElementById("sel-skill").value == "all" &&
-          document.getElementById("sel-river").value == "all"
-        ) {
-          checkBox.checked = true;
-        }
-      }
-
-      function displayAllRiverTrips(show) {
-        var els = document.getElementsByClassName("river-trip");
-        for (var i = 0; i < els.length; i++) {
-          var ele = document.getElementsByClassName("river-trip")[i];
-          if (show) {
-            ele.style.display = "grid";
-          } else {
-            ele.style.display = "none";
-          }
-        }
-      }
-
       function displayByClass(show, name) {
         var els = document.getElementsByClassName(name);
         for (var i = 0; i < els.length; i++) {
@@ -82,80 +31,30 @@
         }
       }
 
-      function displayPriceTrips() {
-        id = document.getElementById("sel-price").value;
-
-        if (id == "all") {
-          return true;
-        } else if (id == "low-price") {
-          displayByClass(false, "med-price");
-          displayByClass(false, "high-price");
-        } else if (id == "med-price") {
-          displayByClass(false, "low-price");
-          displayByClass(false, "high-price");
-        } else if (id == "high-price") {
-          displayByClass(false, "low-price");
-          displayByClass(false, "med-price");
-        }
-        var checkBox = document.getElementById("select-all");
-        checkBox.checked = false;
+      function displaySafety(){
+        displayByClass(true,"faq-body-safety");
+        displayByClass(false,"faq-body-pricing");
+        displayByClass(false,"faq-body-about");
       }
 
-      function displaySkillTrips() {
-        id = document.getElementById("sel-skill").value;
-
-        if (id == "all") {
-          return true;
-        } else if (id == "novice") {
-          displayByClass(false, "intermediate");
-          displayByClass(false, "advanced");
-        } else if (id == "intermediate") {
-          displayByClass(false, "novice");
-          displayByClass(false, "advanced");
-        } else if (id == "advanced") {
-          displayByClass(false, "novice");
-          displayByClass(false, "intermediate");
-        }
-        var checkBox = document.getElementById("select-all");
-        checkBox.checked = false;
+      function displayPricing(){
+        displayByClass(false,"faq-body-safety");
+        displayByClass(true,"faq-body-pricing");
+        displayByClass(false,"faq-body-about");
       }
 
-      function displayDurationTrips() {
-        id = document.getElementById("sel-duration").value;
+      function displayAbout(){
+        displayByClass(false,"faq-body-safety");
+        displayByClass(false,"faq-body-pricing");
+        displayByClass(true,"faq-body-about");
 
-        if (id == "all") {
-          return true;
-        } else if (id == "one-day") {
-          displayByClass(false, "three-day");
-          displayByClass(false, "week");
-        } else if (id == "three-day") {
-          displayByClass(false, "one-day");
-          displayByClass(false, "week");
-        } else if (id == "week") {
-          displayByClass(false, "one-day");
-          displayByClass(false, "three-day");
-        }
-        var checkBox = document.getElementById("select-all");
-        checkBox.checked = false;
+        setSelectedLabel("About Us")
+
       }
 
-      function displayLocationTrips() {
-        id = document.getElementById("sel-river").value;
-
-        if (id == "all") {
-          return true;
-        } else if (id == "salmon") {
-          displayByClass(false, "snake");
-        } else if (id == "snake") {
-          displayByClass(false, "salmon");
-        }
-        var checkBox = document.getElementById("select-all");
-        checkBox.checked = false;
-      }
-
-      function sidebarClick() {
-        document.getElementById("sidebar").style.width = "0px";
-        //document.getElementById("main").style.marginLeft = "0px";
+      function setSelectedLabel(text){
+        el = document.getElementsByClassName("faq-selected")[0];
+        el.text = "About Us"
       }
     </script>
   </head>
@@ -177,7 +76,7 @@
               <a href="river.html" title="River Trips">River Trips</a>
             </li>
             <li>
-              <a href="faq.html" title="FAQ">FAQ</a>
+              <a href="faq.html" title="FAQ" class="active">FAQ</a>
             </li>
           </ul>
         </nav>
@@ -185,33 +84,35 @@
         <main class="faq-main">
           <div class="faq-nav">
             <h2>FAQ</h2>
-            <div class="faq-nav-child">
+            <div class="faq-nav-child"  onclick="displaySafety()">
               <img
                 class="logo"
-                src="images/logo.png"
-                alt="Robs River Rafting"
+                src="images/safety.png"
+                alt="Safety"
               />
               <h3>Safety</h3>
             </div>
-            <div class="faq-nav-child">
+            <div class="faq-nav-child"  onclick="displayPricing()">
               <img
                 class="logo"
-                src="images/logo.png"
-                alt="Robs River Rafting"
+                src="images/pricing.png"
+                alt="Pricing"
               />
               <h3>Pricing</h3>
             </div>
-            <div class="faq-nav-child">
+            <div class="faq-nav-child"  onclick="displayAbout()">
               <img
                 class="logo"
-                src="images/logo.png"
-                alt="Robs River Rafting"
+                src="images/about.png"
+                alt="About Us"
               />
               <h3>About Us</h3>
             </div>
           </div>
           <div class="faq-body">
-            <label class="faq-selected">Safety</label>
+            <div class="faq-body-label">
+              <label class="faq-selected">Safety</label>
+            </div>
             <div class="faq-body-safety">
               <h2>What safety equipment is provided?</h2>
               <p>
@@ -220,8 +121,34 @@
                 adhears to all safety regulations
               </p>
               <h2>What happens if I get hurt?</h2>
+              <p>All of our guides are trained in CPR, First Aid and BLS. We have a very good track record and make every effort to keep you safe.</p>
               <h2>Do I need to sign a waiver?</h2>
+              <p>Yes, It is very standard to make clients sign a liabity waiver. You do have the option to purchance insureance for any unlikely events.</p>
               <h2>What is your safety record?</h2>
+              <p>We have one of the best safety record in the industry. Rest assure, you are in great hands</p>
+            </div>
+            <div class="faq-body-pricing">
+              <h2>How much is an average trip?</h2>
+              <p>
+                Take a look at our trip planner page. Trips start at around $50 all the way up to $1,000+
+                on average, 1 day trips are $50 - $100. 3 day trips are 400-500, and 1 week trips are $1,000.
+              </p>
+              <h2>How much is insurance?</h2>
+              <p>Insurance is arount $20 per day.</p>
+              <h2>Do you offer discounts?</h2>
+              <p>Yes. We offer discounts for military, first responders, seniors, and other promotionals.</p>
+              <h2>When is payment due?</h2>
+              <p>Payments are required in full prior to the trip.</p>
+            </div>
+            <div class="faq-body-about">
+              <h2>How long have you been in buisness?</h2>
+              <p>
+                We have been in buisness for over 50 years
+              </p>
+              <h2>How did you start out?</h2>
+              <p>Ros river rafting was started over 50 years ago by local Idaho rafting enthusiast. It has remained a family owned buisness ever since.</p>
+              <h2>Are you affiliated with any other rafting companies?</h2>
+              <p>No. We are an indipendent, localy owned, family buisness.</p>
             </div>
           </div>
         </main>
