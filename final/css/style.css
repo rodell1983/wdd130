@@ -1,7 +1,7 @@
 body {
   background-color: #d0eaff;
   color: #606060;
-  font-family: 'Noticia Text', Arial, sans-serif;
+  font-family: "Noticia Text", Arial, sans-serif;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
@@ -9,11 +9,9 @@ body {
 
 header,
 footer {
-  justify-content: center;
-  align-content: center;
   background-color: #336699;
   color: #fff;
-  padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
 }
 
 main {
@@ -32,7 +30,7 @@ h3 {
 }
 
 footer {
-    height: 50px;
+  height: 50px;
 }
 
 img {
@@ -46,8 +44,6 @@ img {
   background-color: #fff;
   margin: 0 auto;
   padding: 0;
-  justify-content: center;
-  align-items: center;
 }
 
 .logo {
@@ -62,7 +58,6 @@ img {
 .color5 {
   width: 100px;
   height: 50px;
-
 }
 
 .color1 p,
