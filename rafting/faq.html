@@ -18,45 +18,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script>
-      function displayByClass(show, name) {
-        var els = document.getElementsByClassName(name);
-        for (var i = 0; i < els.length; i++) {
-          var ele = document.getElementsByClassName(name)[i];
-          if (show) {
-            ele.style.display = "grid";
-          } else {
-            ele.style.display = "none";
-          }
-        }
-      }
-
-      function displaySafety(){
-        displayByClass(true,"faq-body-safety");
-        displayByClass(false,"faq-body-pricing");
-        displayByClass(false,"faq-body-about");
-      }
-
-      function displayPricing(){
-        displayByClass(false,"faq-body-safety");
-        displayByClass(true,"faq-body-pricing");
-        displayByClass(false,"faq-body-about");
-      }
-
-      function displayAbout(){
-        displayByClass(false,"faq-body-safety");
-        displayByClass(false,"faq-body-pricing");
-        displayByClass(true,"faq-body-about");
-
-        setSelectedLabel("About Us")
-
-      }
-
-      function setSelectedLabel(text){
-        el = document.getElementsByClassName("faq-selected")[0];
-        el.text = "About Us"
-      }
-    </script>
   </head>
   <body>
     <div class="page-faq">
@@ -81,77 +42,109 @@
           </ul>
         </nav>
       </header>
-        <main class="faq-main">
-          <div class="faq-nav">
-            <h2>FAQ</h2>
-            <div class="faq-nav-child"  onclick="displaySafety()">
-              <img
-                class="logo"
-                src="images/safety.png"
-                alt="Safety"
-              />
-              <h3>Safety</h3>
-            </div>
-            <div class="faq-nav-child"  onclick="displayPricing()">
-              <img
-                class="logo"
-                src="images/pricing.png"
-                alt="Pricing"
-              />
-              <h3>Pricing</h3>
-            </div>
-            <div class="faq-nav-child"  onclick="displayAbout()">
-              <img
-                class="logo"
-                src="images/about.png"
-                alt="About Us"
-              />
-              <h3>About Us</h3>
-            </div>
+      <main class="faq-main">
+        <div class="faq-nav">
+          <h2>FAQ</h2>
+          <div class="faq-nav-child" onclick="displaySafety()">
+            <img class="logo" src="images/safety.png" alt="Safety" />
+            <h3>Safety</h3>
           </div>
-          <div class="faq-body">
-            <div class="faq-body-label">
-              <label class="faq-selected">Safety</label>
-            </div>
-            <div class="faq-body-safety">
-              <h2>What safety equipment is provided?</h2>
+          <div class="faq-nav-child" onclick="displayPricing()">
+            <img class="logo" src="images/pricing.png" alt="Pricing" />
+            <h3>Pricing</h3>
+          </div>
+          <div class="faq-nav-child" onclick="displayAbout()">
+            <img class="logo" src="images/about.png" alt="About Us" />
+            <h3>About Us</h3>
+          </div>
+        </div>
+        <div class="faq-body">
+          <div class="faq-body-label">
+            <label class="faq-selected"></label>
+          </div>
+          <div class="faq-body-safety">
+            <h2 class="faq-body-question">
+              What safety equipment is provided?
+            </h2>
+            <div class="faq-body-answer">
               <p>
                 We provide only the highest grade safety equipment for our
                 trips. Every item is inspected before and after each trip and
                 adhears to all safety regulations
               </p>
-              <h2>What happens if I get hurt?</h2>
-              <p>All of our guides are trained in CPR, First Aid and BLS. We have a very good track record and make every effort to keep you safe.</p>
-              <h2>Do I need to sign a waiver?</h2>
-              <p>Yes, It is very standard to make clients sign a liabity waiver. You do have the option to purchance insureance for any unlikely events.</p>
-              <h2>What is your safety record?</h2>
-              <p>We have one of the best safety record in the industry. Rest assure, you are in great hands</p>
             </div>
-            <div class="faq-body-pricing">
-              <h2>How much is an average trip?</h2>
+            <h2 class="faq-body-question">What happens if I get hurt?</h2>
+            <div class="faq-body-answer">
               <p>
-                Take a look at our trip planner page. Trips start at around $50 all the way up to $1,000+
-                on average, 1 day trips are $50 - $100. 3 day trips are 400-500, and 1 week trips are $1,000.
+                All of our guides are trained in CPR, First Aid and BLS. We have
+                a very good track record and make every effort to keep you safe.
               </p>
-              <h2>How much is insurance?</h2>
+            </div>
+            <h2 class="faq-body-question">Do I need to sign a waiver?</h2>
+            <div class="faq-body-answer">
+              <p>
+                Yes, It is very standard to make clients sign a liabity waiver.
+                You do have the option to purchance insureance for any unlikely
+                events.
+              </p>
+            </div>
+            <h2 class="faq-body-question">What is your safety record?</h2>
+            <div class="faq-body-answer">
+              <p>
+                We have one of the best safety record in the industry. Rest
+                assure, you are in great hands
+              </p>
+            </div>
+          </div>
+          <div class="faq-body-pricing">
+            <h2 class="faq-body-question">How much is an average trip?</h2>
+            <div class="faq-body-answer">
+              <p>
+                Take a look at our trip planner page. Trips start at around $50
+                all the way up to $1,000+ on average, 1 day trips are $50 -
+                $100. 3 day trips are 400-500, and 1 week trips are $1,000.
+              </p>
+            </div>
+            <h2 class="faq-body-question">How much is insurance?</h2>
+            <div class="faq-body-answer">
               <p>Insurance is arount $20 per day.</p>
-              <h2>Do you offer discounts?</h2>
-              <p>Yes. We offer discounts for military, first responders, seniors, and other promotionals.</p>
-              <h2>When is payment due?</h2>
+            </div>
+            <h2 class="faq-body-question">Do you offer discounts?</h2>
+            <div class="faq-body-answer">
+              <p>
+                Yes. We offer discounts for military, first responders, seniors,
+                and other promotionals.
+              </p>
+            </div>
+            <h2 class="faq-body-question">When is payment due?</h2>
+            <div class="faq-body-answer">
               <p>Payments are required in full prior to the trip.</p>
             </div>
-            <div class="faq-body-about">
-              <h2>How long have you been in buisness?</h2>
+          </div>
+          <div class="faq-body-about">
+            <h2 class="faq-body-question">
+              How long have you been in buisness?
+            </h2>
+            <div class="faq-body-answer">
+              <p>We have been in buisness for over 50 years</p>
+            </div>
+            <h2 class="faq-body-question">How did you start out?</h2>
+            <div class="faq-body-answer">
               <p>
-                We have been in buisness for over 50 years
+                Ros river rafting was started over 50 years ago by local Idaho
+                rafting enthusiast. It has remained a family owned buisness ever
+                since.
               </p>
-              <h2>How did you start out?</h2>
-              <p>Ros river rafting was started over 50 years ago by local Idaho rafting enthusiast. It has remained a family owned buisness ever since.</p>
-              <h2>Are you affiliated with any other rafting companies?</h2>
+            </div>
+            <h2 class="faq-body-question">
+              Are you affiliated with any other rafting companies?
+            </h2>
+            <div class="faq-body-answer">
               <p>No. We are an indipendent, localy owned, family buisness.</p>
             </div>
           </div>
-        </main>
+        </div>
+      </main>
       <footer>
         <p>&#169; 2021 Robs River Rafting - Robert Odell - WDD130</p>
         <div class="social">
@@ -190,5 +183,84 @@
         </div>
       </footer>
     </div>
+    <script>
+      function displayByClass(show, name) {
+        var els = document.getElementsByClassName(name);
+        for (var i = 0; i < els.length; i++) {
+          var el = document.getElementsByClassName(name)[i];
+          if (show) {
+            el.style.display = "block";
+          } else {
+            el.style.display = "none";
+          }
+        }
+      }
+
+      function displayPlus(name) {
+        var els = document.getElementsByClassName(name);
+        for (var i = 0; i < els.length; i++) {
+          var el = document.getElementsByClassName(name)[i];
+          if (el.classList.contains("showplus") === false) {
+            el.classList.add("showplus");
+          }
+
+          el.classList.remove("showminus");
+        }
+      }
+
+      function displaySafety() {
+        displayByClass(true, "faq-body-safety");
+        displayByClass(false, "faq-body-pricing");
+        displayByClass(false, "faq-body-about");
+
+        setSelectedLabel("Safety");
+      }
+
+      function displayPricing() {
+        displayByClass(false, "faq-body-safety");
+        displayByClass(true, "faq-body-pricing");
+        displayByClass(false, "faq-body-about");
+
+        setSelectedLabel("Pricing");
+      }
+
+      function displayAbout() {
+        displayByClass(false, "faq-body-safety");
+        displayByClass(false, "faq-body-pricing");
+        displayByClass(true, "faq-body-about");
+
+        setSelectedLabel("About Us");
+      }
+
+      function setSelectedLabel(text) {
+        el = document.getElementsByClassName("faq-selected")[0];
+        el.innerHTML = text;
+      }
+
+      var acc = document.getElementsByClassName("faq-body-question");
+
+      for (var i = 0; i < acc.length; i++) {
+        acc[i].classList.add("showplus");
+        acc[i].addEventListener("click", function () {
+          displayPlus("faq-body-question");
+
+          var el = this.nextElementSibling;
+          var display = "none";
+          if (el.style.display === "block") {
+            display = "none";
+          } else {
+            display = "block";
+            this.classList.remove("showplus");
+            this.classList.add("showminus");
+          }
+
+          //Close all Faq answers
+          displayByClass(false, "faq-body-answer");
+
+          //Set current question to open or close
+          el.style.display = display;
+        });
+      }
+    </script>
   </body>
 </html>

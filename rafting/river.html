@@ -18,150 +18,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script>
-        function selectAll() {
-          var checkBox = document.getElementById("select-all");
-    
-          if (checkBox.checked == true) {
-            document.getElementById("sel-price").value = "all";
-            document.getElementById("sel-duration").value = "all";
-            document.getElementById("sel-skill").value = "all";
-            document.getElementById("sel-river").value = "all";
-            displayTrips();
-          } else {
-            if (
-              document.getElementById("sel-price").value == "all" &&
-              document.getElementById("sel-duration").value == "all" &&
-              document.getElementById("sel-skill").value == "all" &&
-              document.getElementById("sel-river").value == "all"
-            ) {
-              checkBox.checked = true;
-            }
-          }
-        }
-        function displayTrips() {
-          displayAllRiverTrips(true);
-    
-          displayDurationTrips();
-          displayPriceTrips();
-          displaySkillTrips();
-          displayLocationTrips();
-    
-          var checkBox = document.getElementById("select-all");
-          if (
-            document.getElementById("sel-price").value == "all" &&
-            document.getElementById("sel-duration").value == "all" &&
-            document.getElementById("sel-skill").value == "all" &&
-            document.getElementById("sel-river").value == "all"
-          ) {
-            checkBox.checked = true;
-          }
-        }
-    
-        function displayAllRiverTrips(show) {
-          var els = document.getElementsByClassName("river-trip");
-          for (var i = 0; i < els.length; i++) {
-            var ele = document.getElementsByClassName("river-trip")[i];
-            if (show) {
-              ele.style.display = "grid";
-            } else {
-              ele.style.display = "none";
-            }
-          }
-        }
-    
-        function displayByClass(show, name) {
-          var els = document.getElementsByClassName(name);
-          for (var i = 0; i < els.length; i++) {
-            var ele = document.getElementsByClassName(name)[i];
-            if (show) {
-              ele.style.display = "grid";
-            } else {
-              ele.style.display = "none";
-            }
-          }
-        }
-    
-        function displayPriceTrips() {
-          id = document.getElementById("sel-price").value;
-    
-          if (id == "all") {
-            return true;
-          } else if (id == "low-price") {
-            displayByClass(false, "med-price");
-            displayByClass(false, "high-price");
-          } else if (id == "med-price") {
-            displayByClass(false, "low-price");
-            displayByClass(false, "high-price");
-          } else if (id == "high-price") {
-            displayByClass(false, "low-price");
-            displayByClass(false, "med-price");
-          }
-          var checkBox = document.getElementById("select-all");
-          checkBox.checked = false;
-        }
-    
-        function displaySkillTrips() {
-          id = document.getElementById("sel-skill").value;
-    
-          if (id == "all") {
-            return true;
-          } else if (id == "novice") {
-            displayByClass(false, "intermediate");
-            displayByClass(false, "advanced");
-          } else if (id == "intermediate") {
-            displayByClass(false, "novice");
-            displayByClass(false, "advanced");
-          } else if (id == "advanced") {
-            displayByClass(false, "novice");
-            displayByClass(false, "intermediate");
-          }
-          var checkBox = document.getElementById("select-all");
-          checkBox.checked = false;
-        }
-    
-        function displayDurationTrips() {
-          id = document.getElementById("sel-duration").value;
-    
-          if (id == "all") {
-            return true;
-          } else if (id == "one-day") {
-            displayByClass(false, "three-day");
-            displayByClass(false, "week");
-          } else if (id == "three-day") {
-            displayByClass(false, "one-day");
-            displayByClass(false, "week");
-          } else if (id == "week") {
-            displayByClass(false, "one-day");
-            displayByClass(false, "three-day");
-          }
-          var checkBox = document.getElementById("select-all");
-          checkBox.checked = false;
-        }
-    
-        function displayLocationTrips() {
-          id = document.getElementById("sel-river").value;
-    
-          if (id == "all") {
-            return true;
-          } else if (id == "salmon") {
-            displayByClass(false, "snake");
-          } else if (id == "snake") {
-            displayByClass(false, "salmon");
-          }
-          var checkBox = document.getElementById("select-all");
-          checkBox.checked = false;
-        }
-
-        function sidebarClick() {
-
-            document.getElementById("sidebar").style.width = "0px";
-            //document.getElementById("main").style.marginLeft = "0px";
-        }
-      </script>
   </head>
   <body>
-      
     <div class="page-river">
       <header>
         <h1>
@@ -176,7 +34,9 @@
               <a href="index.html" title="Home">Home</a>
             </li>
             <li>
-              <a href="river.html" title="River Trips">River Trips</a>
+              <a href="river.html" title="River Trips" class="active"
+                >River Trips</a
+              >
             </li>
             <li>
               <a href="faq.html" title="FAQ">FAQ</a>
@@ -184,105 +44,128 @@
           </ul>
         </nav>
       </header>
-      <main class="river-main">
-        <div class="trip-planner" id="sidebar">
-          <h2>Trip Planner</h2>
-          <div class="trip-planner-box">
-            <label class="option-box"
-              >Price Range:
-              <select id="sel-price" onchange="displayTrips()">
-                <option value="all" selected="selected">All</option>
-                <option value="low-price">$0-100</option>
-                <option value="med-price">$500-1,000</option>
-                <option value="high-price">$1,000+</option>
-              </select>
-            </label>
-            <label class="option-box"
-              >Location:
-              <select id="sel-river" onchange="displayTrips()">
-                <option value="all" selected="selected">All</option>
-                <option value="salmon">Salmon River</option>
-                <option value="snake">Snake River</option>
-              </select>
-            </label>
-
-            <label class="option-box"
-              >Duration:
-              <select id="sel-duration" onchange="displayTrips()">
-                <option value="all" selected="selected">All</option>
-                <option value="one-day">1 Day</option>
-                <option value="three-day">2-3 Days</option>
-                <option value="week">1 Week</option>
-              </select>
-            </label>
-
-            <label class="option-box"
-              >Skill Level:
-              <select id="sel-skill" onchange="displayTrips()">
-                <option value="all" selected="selected">All</option>
-                <option value="novice">Novice</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
-              </select>
-            </label>
-
-            <label class="option-box">
-              Select All
-              <input
-                type="checkbox"
-                id="select-all"
-                onchange="selectAll()"
-            /></label>
-          </div>
+      <main>
+        <div class="river-h2s">
+          <h2 onclick="sidebarClick()" id="sidebar-header">Trip Planner</h2>
+          <h2>River Trips</h2>
         </div>
 
-        <div class="river-trips">
-          <div class="river-trip-h2">
-            <h2>River Trips</h2>
+        <div class="river-main">
+          <div class="trip-planner" id="sidebar">
+            <div class="trip-planner-box">
+              <label class="option-box"
+                >Price Range:
+                <select id="sel-price" onchange="displayTrips()">
+                  <option value="all" selected="selected">All</option>
+                  <option value="low-price">$0-100</option>
+                  <option value="med-price">$500-1,000</option>
+                  <option value="high-price">$1,000+</option>
+                </select>
+              </label>
+              <label class="option-box"
+                >Duration:
+                <select id="sel-duration" onchange="displayTrips()">
+                  <option value="all" selected="selected">All</option>
+                  <option value="one-day">1 Day</option>
+                  <option value="three-day">2-3 Days</option>
+                  <option value="week">1 Week</option>
+                </select>
+              </label>
+
+              <label class="option-box"
+                >Skill Level:
+                <select id="sel-skill" onchange="displayTrips()">
+                  <option value="all" selected="selected">All</option>
+                  <option value="novice">Novice</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                </select>
+              </label>
+
+              <label class="option-box">
+                Select All
+                <input type="checkbox" id="select-all" onchange="selectAll()"
+              /></label>
+            </div>
           </div>
-          <div class="river-trip low-price novice one-day" id="rt1">
-            <h3>Get Your Feet Wet</h3>
-            <img class="logo" src="images/littlecolorado.jpg" alt="Robs River Rafting" />
-            <p>$50 - Novice - Half Day</p>
-            <p>Great first trip.</p>
-          </div>
-          <div class="river-trip low-price novice one-day">
-            <h3>Lazy River</h3>
-            <img class="logo" src="images/raft-rapid.jpg" alt="Robs River Rafting" />
-            <p>$50 - Novice - Half Day</p>
-            <p>Relaxing Trip</p>
-          </div>
-          <div class="river-trip low-price intermediate one-day">
-            <h3>Swift & Smooth</h3>
-            <img class="logo" src="images/salmon-kayak1.jpg" alt="Robs River Rafting" />
-            <p>$100 - Intermediate - One Day</p>
-            <p>Small Rapids, Big Fun</p>
-          </div>
-          <div class="river-trip med-price novice three-day">
-            <h3>Soak and Sun</h3>
-            <img class="logo" src="images/salmon-kayak2.jpg" alt="Robs River Rafting" />
-            <p>$450 - Novice - Three Day</p>
-            <p>Relaxing Weekend</p>
-          </div>
-          <div class="river-trip med-price intermediate three-day">
-            <h3>Lazy River</h3>
-            <img class="logo" src="images/salmon-kayak4.jpg" alt="Robs River Rafting" />
-            <p>Sample text</p>
-          </div>
-          <div class="river-trip med-price advanced three-day">
-            <h3>Med</h3>
-            <img class="logo" src="images/snake-rapid1.jpg" alt="Robs River Rafting" />
-            <p>Sample text</p>
-          </div>
-          <div class="river-trip high-price intermediate week">
-            <h3>Endurance</h3>
-            <img class="logo" src="images/river-narrow.jpg" alt="Robs River Rafting" />
-            <p>Sample text</p>
-          </div>
-          <div class="river-trip high-price advanced week">
-            <h3>Heart Attack</h3>
-            <img class="logo" src="images/elves-chasm.jpg" alt="Robs River Rafting" />
-            <p>Sample text</p>
+
+          <div class="river-trips">
+            <div class="river-trip low-price novice one-day" id="rt1">
+              <h3>Get Your Feet Wet</h3>
+              <img
+                class="logo"
+                src="images/littlecolorado.jpg"
+                alt="Robs River Rafting"
+              />
+              <p>$50 - Novice - Half Day</p>
+              <p>Great first trip.</p>
+            </div>
+            <div class="river-trip low-price novice one-day">
+              <h3>Lazy River</h3>
+              <img
+                class="logo"
+                src="images/raft-rapid.jpg"
+                alt="Robs River Rafting"
+              />
+              <p>$50 - Novice - Half Day</p>
+              <p>Relaxing Trip</p>
+            </div>
+            <div class="river-trip low-price intermediate one-day">
+              <h3>Swift & Smooth</h3>
+              <img
+                class="logo"
+                src="images/salmon-kayak1.jpg"
+                alt="Robs River Rafting"
+              />
+              <p>$100 - Intermediate - One Day</p>
+              <p>Small Rapids, Big Fun</p>
+            </div>
+            <div class="river-trip med-price novice three-day">
+              <h3>Soak and Sun</h3>
+              <img
+                class="logo"
+                src="images/salmon-kayak2.jpg"
+                alt="Robs River Rafting"
+              />
+              <p>$450 - Novice - Three Day</p>
+              <p>Relaxing Weekend</p>
+            </div>
+            <div class="river-trip med-price intermediate three-day">
+              <h3>Lazy River</h3>
+              <img
+                class="logo"
+                src="images/salmon-kayak4.jpg"
+                alt="Robs River Rafting"
+              />
+              <p>Sample text</p>
+            </div>
+            <div class="river-trip med-price advanced three-day">
+              <h3>Med</h3>
+              <img
+                class="logo"
+                src="images/snake-rapid1.jpg"
+                alt="Robs River Rafting"
+              />
+              <p>Sample text</p>
+            </div>
+            <div class="river-trip high-price intermediate week">
+              <h3>Endurance</h3>
+              <img
+                class="logo"
+                src="images/river-narrow.jpg"
+                alt="Robs River Rafting"
+              />
+              <p>Sample text</p>
+            </div>
+            <div class="river-trip high-price advanced week">
+              <h3>Heart Attack</h3>
+              <img
+                class="logo"
+                src="images/elves-chasm.jpg"
+                alt="Robs River Rafting"
+              />
+              <p>Sample text</p>
+            </div>
           </div>
         </div>
       </main>
@@ -324,5 +207,145 @@
         </div>
       </footer>
     </div>
+    <script>
+      function selectAll() {
+        var checkBox = document.getElementById("select-all");
+
+        if (checkBox.checked == true) {
+          document.getElementById("sel-price").value = "all";
+          document.getElementById("sel-duration").value = "all";
+          document.getElementById("sel-skill").value = "all";
+          displayTrips();
+        } else {
+          if (
+            document.getElementById("sel-price").value == "all" &&
+            document.getElementById("sel-duration").value == "all" &&
+            document.getElementById("sel-skill").value == "all"
+          ) {
+            checkBox.checked = true;
+          }
+        }
+      }
+      function displayTrips() {
+        displayAllRiverTrips(true);
+
+        displayDurationTrips();
+        displayPriceTrips();
+        displaySkillTrips();
+
+        var checkBox = document.getElementById("select-all");
+        if (
+          document.getElementById("sel-price").value == "all" &&
+          document.getElementById("sel-duration").value == "all" &&
+          document.getElementById("sel-skill").value == "all"
+        ) {
+          checkBox.checked = true;
+        }
+      }
+
+      function displayAllRiverTrips(show) {
+        var els = document.getElementsByClassName("river-trip");
+        for (var i = 0; i < els.length; i++) {
+          var ele = document.getElementsByClassName("river-trip")[i];
+          if (show) {
+            ele.style.display = "grid";
+          } else {
+            ele.style.display = "none";
+          }
+        }
+      }
+
+      function displayByClass(show, name) {
+        var els = document.getElementsByClassName(name);
+        for (var i = 0; i < els.length; i++) {
+          var ele = document.getElementsByClassName(name)[i];
+          if (show) {
+            ele.style.display = "grid";
+          } else {
+            ele.style.display = "none";
+          }
+        }
+      }
+
+      function displayPriceTrips() {
+        id = document.getElementById("sel-price").value;
+
+        if (id == "all") {
+          return true;
+        } else if (id == "low-price") {
+          displayByClass(false, "med-price");
+          displayByClass(false, "high-price");
+        } else if (id == "med-price") {
+          displayByClass(false, "low-price");
+          displayByClass(false, "high-price");
+        } else if (id == "high-price") {
+          displayByClass(false, "low-price");
+          displayByClass(false, "med-price");
+        }
+        var checkBox = document.getElementById("select-all");
+        checkBox.checked = false;
+      }
+
+      function displaySkillTrips() {
+        id = document.getElementById("sel-skill").value;
+
+        if (id == "all") {
+          return true;
+        } else if (id == "novice") {
+          displayByClass(false, "intermediate");
+          displayByClass(false, "advanced");
+        } else if (id == "intermediate") {
+          displayByClass(false, "novice");
+          displayByClass(false, "advanced");
+        } else if (id == "advanced") {
+          displayByClass(false, "novice");
+          displayByClass(false, "intermediate");
+        }
+        var checkBox = document.getElementById("select-all");
+        checkBox.checked = false;
+      }
+
+      function displayDurationTrips() {
+        id = document.getElementById("sel-duration").value;
+
+        if (id == "all") {
+          return true;
+        } else if (id == "one-day") {
+          displayByClass(false, "three-day");
+          displayByClass(false, "week");
+        } else if (id == "three-day") {
+          displayByClass(false, "one-day");
+          displayByClass(false, "week");
+        } else if (id == "week") {
+          displayByClass(false, "one-day");
+          displayByClass(false, "three-day");
+        }
+        var checkBox = document.getElementById("select-all");
+        checkBox.checked = false;
+      }
+
+      function sidebarClick() {
+        var head = document.getElementById("sidebar-header");
+        var el = document.getElementById("sidebar");
+        if (head.classList.contains("showminus")) {
+          el.style.display = "none";
+          head.classList.add("showplus");
+          head.classList.remove("showminus");
+          document.getElementsByClassName(
+            "river-main"
+          )[0].style.gridTemplateColumns = "1fr";
+        } else {
+          el.style.display = "block";
+          head.classList.add("showminus");
+          head.classList.remove("showplus");
+          document.getElementsByClassName(
+            "river-main"
+          )[0].style.gridTemplateColumns = "250px 1fr";
+        }
+      }
+
+      var head = document.getElementById("sidebar-header");
+      head.classList.add("showminus");
+    </script>
   </body>
 </html>
