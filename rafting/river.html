@@ -46,7 +46,7 @@
       </header>
       <main>
         <div class="river-h2s">
-          <h2 onclick="sidebarClick()" id="sidebar-header">Trip Planner</h2>
+          <h2 onclick="sidebarClick()" id="sidebar-header" class="trip-planner-header">Trip Planner</h2>
           <h2>River Trips</h2>
         </div>
 
@@ -57,8 +57,8 @@
                 >Price Range:
                 <select id="sel-price" onchange="displayTrips()">
                   <option value="all" selected="selected">All</option>
-                  <option value="low-price">$0-100</option>
-                  <option value="med-price">$500-1,000</option>
+                  <option value="low-price">$0-499</option>
+                  <option value="med-price">$500-999</option>
                   <option value="high-price">$1,000+</option>
                 </select>
               </label>
@@ -104,67 +104,71 @@
               <h3>Lazy River</h3>
               <img
                 class="logo"
-                src="images/raft-rapid.jpg"
+                src="images/salmon-boats.jpg"
                 alt="Robs River Rafting"
               />
-              <p>$50 - Novice - Half Day</p>
+              <p>$75 - Novice - Half Day</p>
               <p>Relaxing Trip</p>
             </div>
             <div class="river-trip low-price intermediate one-day">
               <h3>Swift & Smooth</h3>
               <img
                 class="logo"
-                src="images/salmon-kayak1.jpg"
+                src="images/salmon-boat-beach.jpg"
                 alt="Robs River Rafting"
               />
-              <p>$100 - Intermediate - One Day</p>
+              <p>$200 - Intermediate - One Day</p>
               <p>Small Rapids, Big Fun</p>
             </div>
             <div class="river-trip med-price novice three-day">
               <h3>Soak and Sun</h3>
               <img
                 class="logo"
-                src="images/salmon-kayak2.jpg"
+                src="images/littlecolorado.jpg"
                 alt="Robs River Rafting"
               />
-              <p>$450 - Novice - Three Day</p>
+              <p>$500 - Novice - Three Day</p>
               <p>Relaxing Weekend</p>
             </div>
             <div class="river-trip med-price intermediate three-day">
-              <h3>Lazy River</h3>
-              <img
-                class="logo"
-                src="images/salmon-kayak4.jpg"
-                alt="Robs River Rafting"
-              />
-              <p>Sample text</p>
-            </div>
-            <div class="river-trip med-price advanced three-day">
-              <h3>Med</h3>
+              <h3>Feel the Splash</h3>
               <img
                 class="logo"
                 src="images/snake-rapid1.jpg"
                 alt="Robs River Rafting"
               />
-              <p>Sample text</p>
+              <p>$600 - Intermediate - Three Day</p>
+              <p>Face Splashing Fun Weekend</p>
+            </div>
+            <div class="river-trip med-price advanced three-day">
+              <h3>Hold On To Your Britches</h3>
+              <img
+                class="logo"
+                src="images/hermit2.jpg"
+                alt="Robs River Rafting"
+              />
+              <p>$750 - Advanced - Three Day</p>
+              <p>White Knuckle Three Day Adventure</p>
             </div>
             <div class="river-trip high-price intermediate week">
               <h3>Endurance</h3>
               <img
                 class="logo"
-                src="images/river-narrow.jpg"
+                src="images/elves-chasm.jpg"
                 alt="Robs River Rafting"
               />
-              <p>Sample text</p>
+              <p>$1,000 - Intermediate - One Week</p>
+              <p>Week Long Mix Between Mild & Wild</p>
             </div>
             <div class="river-trip high-price advanced week">
               <h3>Heart Attack</h3>
               <img
                 class="logo"
-                src="images/elves-chasm.jpg"
+                src="images/raft-rapid.jpg"
                 alt="Robs River Rafting"
               />
-              <p>Sample text</p>
+              <p>$1,500 - Advanced - One Week</p>
+              <p>Week of Non Stop Action</p>
             </div>
           </div>
         </div>
@@ -328,20 +332,48 @@
         var head = document.getElementById("sidebar-header");
         var el = document.getElementById("sidebar");
         if (head.classList.contains("showminus")) {
-          el.style.display = "none";
+          el.style.display = "none"
           head.classList.add("showplus");
           head.classList.remove("showminus");
           document.getElementsByClassName(
             "river-main"
           )[0].style.gridTemplateColumns = "1fr";
         } else {
-          el.style.display = "block";
+          unfade(el)
           head.classList.add("showminus");
           head.classList.remove("showplus");
           document.getElementsByClassName(
             "river-main"
           )[0].style.gridTemplateColumns = "250px 1fr";
         }
+      }
+
+      function unfade(el) {
+        var op = 0.1; // initial opacity
+        el.style.opacity = 0;
+        el.style.display = "block";
+        var timer = setInterval(function () {
+          if (op >= 1) {
+            clearInterval(timer);
+          }
+          el.style.opacity = op;
+          el.style.filter = "alpha(opacity=" + op * 100 + ")";
+          op += op * 0.1;
+        }, 10);
+      }
+
+      function fade(el) {
+        var op = 1; // initial opacity
+        el.style.opacity = op;
+        var timer = setInterval(function () {
+          if (op <= 0.1) {
+            clearInterval(timer);
+            el.style.display = "none";
+          }
+          el.style.opacity = op;
+          el.style.filter = "alpha(opacity=" + op * 100 + ")";
+          op -= op * 0.1;
+        }, 10);
       }
 
       var head = document.getElementById("sidebar-header");

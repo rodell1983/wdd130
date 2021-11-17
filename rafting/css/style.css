@@ -52,6 +52,8 @@ h3 {
   text-align: center;
 }
 
+/* Classes */
+
 .page {
   background-color: #fff;
 }
@@ -76,6 +78,17 @@ h3 {
   grid-gap: 20px;
   padding: 0.5rem;
 }
+
+.showminus:after {
+  content: "\2212";
+}
+
+.showplus:after {
+  content: "\002B";
+}
+
+
+/* Home Page */
 
 .page main {
   grid-template-columns: 1fr 1fr 1fr;
@@ -104,8 +117,7 @@ h3 {
 
 .main-menu li a,
 .social-menu li a,
-.banner-popup-button a 
-{
+.banner-popup-button a {
   display: block;
   color: #fff;
   text-align: center;
@@ -215,8 +227,14 @@ h2 {
   padding: 1rem;
 }
 
+/* River Trips */
+
 .page-river {
   background-color: #226cb1;
+}
+
+.page-river main {
+  position: relative;
 }
 
 .river-main {
@@ -232,15 +250,12 @@ h2 {
   background-color: #226cb1;
   margin-left: 1rem;
   margin-right: 1rem;
-
-
 }
 
 .river-h2s {
   display: grid;
   grid-template-columns: 250px 1fr;
   grid-gap: 5px;
-  cursor: pointer;
 }
 
 .river-trip {
@@ -248,7 +263,10 @@ h2 {
   justify-items: center;
   border: solid 2px #d3d3d3;
   background-color: #fff;
+}
 
+.trip-planner-header {
+  cursor: pointer;
 }
 
 .trip-planner {
@@ -267,9 +285,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.page-river main {
-  position: relative;
-}
+/* FAQ Page */
 
 .faq-main {
   width: 80%;
@@ -322,7 +338,8 @@ h2 {
   cursor: pointer;
 }
 
-.active:before, .active:after{
+.active:before,
+.active:after {
   content: "\2212";
 }
 
@@ -338,12 +355,6 @@ h2 {
   display: none;
   margin-left: 1rem;
   margin-right: 1rem;
+  text-align: center;
 }
 
-.showminus:after {
-  content: "\2212";
-}
-
-.showplus:after {
-  content: "\002B";
-}

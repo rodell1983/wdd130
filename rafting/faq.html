@@ -68,9 +68,9 @@
             </h2>
             <div class="faq-body-answer">
               <p>
-                We provide only the highest grade safety equipment for our
+                We provide only the highest-grade safety equipment for our
                 trips. Every item is inspected before and after each trip and
-                adhears to all safety regulations
+                adheres to all safety regulations
               </p>
             </div>
             <h2 class="faq-body-question">What happens if I get hurt?</h2>
@@ -83,15 +83,15 @@
             <h2 class="faq-body-question">Do I need to sign a waiver?</h2>
             <div class="faq-body-answer">
               <p>
-                Yes, It is very standard to make clients sign a liabity waiver.
-                You do have the option to purchance insureance for any unlikely
-                events.
+                Yes, it is very standard to make clients sign a liability
+                waiver. You do have the option to purchase insurance for any
+                unlikely events.
               </p>
             </div>
             <h2 class="faq-body-question">What is your safety record?</h2>
             <div class="faq-body-answer">
               <p>
-                We have one of the best safety record in the industry. Rest
+                We have one of the best safety records in the industry. Rest
                 assure, you are in great hands
               </p>
             </div>
@@ -101,19 +101,19 @@
             <div class="faq-body-answer">
               <p>
                 Take a look at our trip planner page. Trips start at around $50
-                all the way up to $1,000+ on average, 1 day trips are $50 -
-                $100. 3 day trips are 400-500, and 1 week trips are $1,000.
+                all the way up to $1,000+ on average, 1-day trips are $50 -
+                $499. 3-day trips are $500-$999, and 1 week trips are $1,000.
               </p>
             </div>
             <h2 class="faq-body-question">How much is insurance?</h2>
             <div class="faq-body-answer">
-              <p>Insurance is arount $20 per day.</p>
+              <p>Insurance is around $20 per day.</p>
             </div>
             <h2 class="faq-body-question">Do you offer discounts?</h2>
             <div class="faq-body-answer">
               <p>
                 Yes. We offer discounts for military, first responders, seniors,
-                and other promotionals.
+                and other promotional.
               </p>
             </div>
             <h2 class="faq-body-question">When is payment due?</h2>
@@ -123,16 +123,16 @@
           </div>
           <div class="faq-body-about">
             <h2 class="faq-body-question">
-              How long have you been in buisness?
+              How long have you been in business?
             </h2>
             <div class="faq-body-answer">
-              <p>We have been in buisness for over 50 years</p>
+              <p>We have been in business for over 50 years</p>
             </div>
             <h2 class="faq-body-question">How did you start out?</h2>
             <div class="faq-body-answer">
               <p>
                 Ros river rafting was started over 50 years ago by local Idaho
-                rafting enthusiast. It has remained a family owned buisness ever
+                rafting enthusiast. It has remained a family owned business ever
                 since.
               </p>
             </div>
@@ -140,7 +140,7 @@
               Are you affiliated with any other rafting companies?
             </h2>
             <div class="faq-body-answer">
-              <p>No. We are an indipendent, localy owned, family buisness.</p>
+              <p>No. We are an independent, locally owned, family business.</p>
             </div>
           </div>
         </div>
@@ -200,11 +200,6 @@
         var els = document.getElementsByClassName(name);
         for (var i = 0; i < els.length; i++) {
           var el = document.getElementsByClassName(name)[i];
-          if (el.classList.contains("showplus") === false) {
-            el.classList.add("showplus");
-          }
-
-          el.classList.remove("showminus");
         }
       }
 
@@ -237,6 +232,34 @@
         el.innerHTML = text;
       }
 
+      function unfade(el) {
+        var op = 0.1; // initial opacity
+        el.style.opacity = 0;
+        el.style.display = "block";
+        var timer = setInterval(function () {
+          if (op >= 1) {
+            clearInterval(timer);
+          }
+          el.style.opacity = op;
+          el.style.filter = "alpha(opacity=" + op * 100 + ")";
+          op += op * 0.1;
+        }, 10);
+      }
+
+      function fade(el) {
+        var op = 1; // initial opacity
+        el.style.opacity = op;
+        var timer = setInterval(function () {
+          if (op <= 0.1) {
+            clearInterval(timer);
+            el.style.display = "none";
+          }
+          el.style.opacity = op;
+          el.style.filter = "alpha(opacity=" + op * 100 + ")";
+          op -= op * 0.1;
+        }, 10);
+      }
+
       var acc = document.getElementsByClassName("faq-body-question");
 
       for (var i = 0; i < acc.length; i++) {
@@ -245,20 +268,16 @@
           displayPlus("faq-body-question");
 
           var el = this.nextElementSibling;
-          var display = "none";
+
           if (el.style.display === "block") {
-            display = "none";
+            fade(el);
+            this.classList.add("showplus");
+            this.classList.remove("showminus");
           } else {
-            display = "block";
+            unfade(el);
             this.classList.remove("showplus");
             this.classList.add("showminus");
           }
-
-          //Close all Faq answers
-          displayByClass(false, "faq-body-answer");
-
-          //Set current question to open or close
-          el.style.display = display;
         });
       }
     </script>
