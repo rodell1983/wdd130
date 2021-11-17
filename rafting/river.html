@@ -46,7 +46,13 @@
       </header>
       <main>
         <div class="river-h2s">
-          <h2 onclick="sidebarClick()" id="sidebar-header" class="trip-planner-header">Trip Planner</h2>
+          <h2
+            onclick="sidebarClick()"
+            id="sidebar-header"
+            class="trip-planner-header"
+          >
+            Trip Planner
+          </h2>
           <h2>River Trips</h2>
         </div>
 
@@ -124,7 +130,7 @@
               <h3>Soak and Sun</h3>
               <img
                 class="logo"
-                src="images/littlecolorado.jpg"
+                src="images/deso-boats.jpg"
                 alt="Robs River Rafting"
               />
               <p>$500 - Novice - Three Day</p>
@@ -332,14 +338,14 @@
         var head = document.getElementById("sidebar-header");
         var el = document.getElementById("sidebar");
         if (head.classList.contains("showminus")) {
-          el.style.display = "none"
+          el.style.display = "none";
           head.classList.add("showplus");
           head.classList.remove("showminus");
           document.getElementsByClassName(
             "river-main"
           )[0].style.gridTemplateColumns = "1fr";
         } else {
-          unfade(el)
+          unfade(el);
           head.classList.add("showminus");
           head.classList.remove("showplus");
           document.getElementsByClassName(
