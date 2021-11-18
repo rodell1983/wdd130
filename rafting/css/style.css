@@ -29,14 +29,13 @@ header h1 {
   font-size: 0.01rem;
 }
 
-main img {
-  width: 100%;
+h2,
+h3 {
+  text-align: center;
 }
 
-footer {
-  grid-template-columns: 1fr 260px;
-  padding-left: 1rem;
-  border-top: 4px solid #d3d3d3;
+h1 {
+  display: none;
 }
 
 h2 {
@@ -47,9 +46,14 @@ h2 {
   background: linear-gradient(#fff, #d3d3d3, #d3d3d3);
 }
 
-h2,
-h3 {
-  text-align: center;
+img {
+  width: 100%;
+}
+
+footer {
+  grid-template-columns: 1fr 260px;
+  padding-left: 1rem;
+  border-top: 4px solid #d3d3d3;
 }
 
 /* Classes */
@@ -91,7 +95,11 @@ h3 {
 
 .page main {
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "banner banner banner" "home-section1 home-section1 home-section1-pic" "home-section2-pic home-section2 home-section2" "home-section3 home-section3 home-section3";
+  grid-template-areas:
+    "banner banner banner"
+    "home-section1 home-section1 home-section1-pic"
+    "home-section2-pic home-section2 home-section2"
+    "home-section3 home-section3 home-section3";
 }
 
 .logo {
