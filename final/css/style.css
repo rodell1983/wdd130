@@ -116,6 +116,7 @@ img {
 
 .main-home{
   display: grid;
+  padding: 3rem;
 }
 .main-history {
   display: grid;
