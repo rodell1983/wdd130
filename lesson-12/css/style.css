@@ -1,0 +1,92 @@
+body {
+  background: linear-gradient(to right, #8e9eab, #eef2f3);
+  font-family: "Noticia Text", Arial, sans-serif;
+  letter-spacing: 0.03em;
+  box-sizing: border-box;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 800;
+}
+
+.card {
+  background-color: #fff;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.card-img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+}
+
+.card-like {
+  display: grid;
+  background-color: red;
+  color: #fff;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  text-align: center;
+  align-content: center;
+  font-size: 1.5em;
+}
+
+.card-like:hover {
+  transform: scale(1.3);
+  transition: all 0.5s ease-out;
+}
+
+.card-body {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-body-info {
+  grid-column: 1/3;
+  line-height: 1.4em;
+}
+
+.card-sqft {
+  font-weight: bold;
+  justify-self: left;
+  font-variant: small-caps;
+}
+
+.card-button {
+  width: 140px;
+  background-color: lightgrey;
+  border-radius: 8px;
+  border: solid 1px darkgrey;
+  justify-self: right;
+  position: relative;
+}
+
+.card-button:hover {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.link {
+  display: grid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: #000;
+  font-weight: bold;
+}

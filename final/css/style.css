@@ -37,12 +37,13 @@ footer {
   background-color: #336699;
 }
 
-img {
+
+/* Classes */
+
+.logo {
   width: 100%;
   background-color: #336699;
 }
-
-/* Classes */
 
 .page-home {
   max-width: 900px;
@@ -111,7 +112,8 @@ img {
 .main-menu li a:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  color: #800000
+  transform: scale(1.1);
+
 }
 
 .main-home{
@@ -133,6 +135,33 @@ img {
   height: 400px;
 }
 
+.buy-sell-ad {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  border-bottom: 2px #ececec;
+  padding: 2rem;
+}
+
+.buy-sell-desc{
+  padding-top: 0;
+}
+.search-form ul {
+  display: flex;
+  justify-self: center;
+ 
+
+}
+
+.sell-img{
+  border-radius: 10px;
+  border: solid 1px grey;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, .2);
+}
+
+.sell-img:hover{
+  transform: scale(1.1);
+  transition: .5s ease-out;
+}
 .color1 {
   background-color: #606060;
 }
@@ -151,4 +180,8 @@ img {
 
 .color5 {
   background-color: #336699;
+}
+
+.action {
+  color: #800000;
 }
