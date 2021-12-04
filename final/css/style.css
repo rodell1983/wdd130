@@ -13,7 +13,7 @@ footer {
   padding: 1rem 0.5rem;
 }
 
-header{
+header {
   display: grid;
   grid-template-columns: 250px 1fr;
   margin: 0;
@@ -23,20 +23,16 @@ header{
 h2 {
   color: #606060;
   background-color: #ececec;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   text-align: center;
-}
-h3 {
-  background-color: #800000;
-  color: #fff;
-  padding: 1rem;
 }
 
 footer {
   height: 50px;
   background-color: #336699;
 }
-
 
 /* Classes */
 
@@ -57,25 +53,24 @@ footer {
   background-color: #606060;
 }
 
-.header-logo{
+.header-logo {
   grid-row: 1/3;
   background-color: #606060;
   padding: 1rem;
 }
 
-.header-title{
+.header-title {
   background-color: #336699;
   color: #fff;
   padding-left: 2rem;
 }
 
-.header-nav{
+.header-nav {
   display: grid;
   background: #ececec;
   align-content: center;
   font-size: 1.2rem;
   border-bottom: solid 2px #336699;
-  
 }
 
 .main-menu {
@@ -86,7 +81,6 @@ footer {
   margin-left: 2rem;
   width: 100%;
   height: 100%;
-
 }
 
 .main-menu > li + li {
@@ -99,10 +93,11 @@ footer {
   border-right: 2px solid #606060;
 }
 
-.main-menu li a{
+.main-menu li a {
   display: block;
   color: #606060;
   text-align: center;
+  border-radius: 6px;
   padding: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -110,15 +105,15 @@ footer {
 }
 
 .main-menu li a:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+ 
+  background-color: #606060;
+  color: #ececec;
   transform: scale(1.1);
-
 }
 
-.main-home{
+.main-home {
   display: grid;
-  padding: 3rem;
+
 }
 .main-history {
   display: grid;
@@ -128,39 +123,67 @@ footer {
 }
 
 
-.home-slideshow{
-  justify-self: center;
-  border: solid 2px black;
-  width: 500px;
-  height: 400px;
-}
-
 .buy-sell-ad {
   display: grid;
   grid-template-columns: 300px 1fr;
-  border-bottom: 2px #ececec;
   padding: 2rem;
+  border-bottom: solid 1px #606060;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-.buy-sell-desc{
+.buy-sell-desc {
   padding-top: 0;
 }
-.search-form ul {
-  display: flex;
+
+.search-form{
+  width: 50%;
   justify-self: center;
- 
-
+  background-color: #ececec;
 }
-
-.sell-img{
+.search-form ul {
+  background-color: #ececec;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.buy-sell-img{
+  padding: 1rem;
+}
+.sell-img {
+  width:250px;
   border-radius: 10px;
-  border: solid 1px grey;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, .2);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.sell-img:hover{
+.sell-img:hover {
   transform: scale(1.1);
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
+}
+
+.sidenav-button:hover {
+  text-align: right;
+  transition: all 1s ease-out;
+}
+
+.history-content{
+
+}
+.fuzzy-edge{
+  width: 100%;
+  border-radius: 4px;
+}
+.float-left, .float-right{
+  margin-bottom: 1rem;
+}
+.float-right{
+  float:right;
+  margin-left: 1rem;
+}
+
+.float-left{
+  float:left;
+  margin-right: 1rem;
+
 }
 .color1 {
   background-color: #606060;
@@ -184,4 +207,63 @@ footer {
 
 .action {
   color: #800000;
+}
+
+/** Slideshow **/
+
+.home-slideshow {
+  position: relative;
+  background: #ececec;
+}
+
+.slides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #606060;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 8px 8px 0;
+  user-select: none;
+}
+
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 8px 0 0 8px;
+}
+
+.prev:hover, .next:hover {
+  background-color: #606060;
+  color: white;
+}
+
+.dot-container {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #606060;
 }
