@@ -7,6 +7,11 @@ body {
   padding: 0;
 }
 
+select, button, label {
+  padding: .5rem;
+  border-radius: 4px;
+}
+
 header,
 footer {
   color: #fff;
@@ -41,7 +46,7 @@ footer {
   background-color: #336699;
 }
 
-.page-home {
+.page {
   max-width: 900px;
   background-color: #fff;
   margin: 0 auto;
@@ -115,19 +120,13 @@ footer {
   display: grid;
 
 }
-.main-history {
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  grid-gap: 10px;
-  padding: 1rem;
-}
 
 
 .buy-sell-ad {
   display: grid;
   grid-template-columns: 300px 1fr;
   padding: 2rem;
-  border-bottom: solid 1px #606060;
+  border-bottom: solid 1px #ececec;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -136,15 +135,22 @@ footer {
 }
 
 .search-form{
-  width: 50%;
   justify-self: center;
-  background-color: #ececec;
+  background-color: #336699;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
 }
 .search-form ul {
-  background-color: #ececec;
+
   display: flex;
   gap: 2rem;
+  list-style: none;
+  align-items: center;
   justify-content: center;
+  
+
 }
 .buy-sell-img{
   padding: 1rem;
@@ -159,14 +165,40 @@ footer {
   transform: scale(1.1);
   transition: 0.5s ease-out;
 }
-
+.sidenav{
+  background-color: #ececec;
+  padding: 2rem;
+}
+.sidenav-button {
+  text-decoration: none;
+  background-color: #606060;
+  color: #ececec;
+  font-size: 1.2em;
+  list-style-type: none;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  width: 100px;
+  justify-self: center;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
 .sidenav-button:hover {
   text-align: right;
   transition: all 1s ease-out;
 }
 
-.history-content{
+.history-sidenav{
+  float: left;
+  width:200px
+}
+.history-main{
+  display: grid;
+ padding-left: 1rem;
+}
 
+.history-content{
+padding: 1rem;
 }
 .fuzzy-edge{
   width: 100%;
@@ -266,4 +298,51 @@ footer {
 
 .active, .dot:hover {
   background-color: #606060;
+}
+
+.forum-section{
+  display: grid;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.forum-header{
+  background-color: #ececec;
+  padding: 1rem;
+  display: grid;
+  grid-gap: 1rem;
+
+}
+.forum-body, .forum-title{
+  padding: 1rem;
+  border: solid 1px #606060;
+  background-color: #fff;
+}
+
+.forum-title{
+  margin: 0;
+  background-color: #336699;
+  color: #fff;
+}
+
+.forum-body{
+  display: grid;
+}
+
+.forum-reply{
+  width: 60px;
+  justify-self: right;
+  border-radius: 4px;
+  background-color: #336699;
+  color: #fff;
+  text-align: center;
+  padding: 4px;
+  cursor: pointer;
+}
+.forum-reply:hover{
+  color: #ececec;
+}
+
+.buy-sell-form{
+  display: grid;
+
 }
