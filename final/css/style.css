@@ -1,4 +1,6 @@
-* {box-sizing: border-box}
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-color: #d0eaff;
@@ -6,13 +8,6 @@ body {
   font-family: "Noticia Text", Arial, sans-serif;
   margin: 0 auto;
   padding: 0;
-}
-
-select,
-button,
-label {
-  padding: 0.5rem;
-  border-radius: 4px;
 }
 
 header,
@@ -28,7 +23,8 @@ header {
   padding: 0;
 }
 
-h2, .sidenav {
+h2,
+.sidenav {
   color: #606060;
   background-color: #ececec;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -37,8 +33,21 @@ h2, .sidenav {
   text-align: center;
 }
 
-form{
-  margin: .5rem;
+form {
+  margin: 0.5rem;
+}
+
+select,
+button,
+label,
+input {
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+hr {
+  border: 3px solid #606060;
+  margin-bottom: 1rem;
 }
 
 footer {
@@ -47,8 +56,8 @@ footer {
   position: relative;
 }
 
-footer p{
-  font-variant:small-caps;
+footer p {
+  font-variant: small-caps;
 }
 
 /* Classes */
@@ -132,26 +141,29 @@ footer p{
   display: grid;
 }
 
-
-.login-button{
+.login-button {
   position: absolute;
   right: 15px;
   top: 50%;
   transform: translate(0, -50%);
 }
 
-.login-button, .cancelbtn, .signupbtn{
+.login-button,
+.cancelbtn,
+.signupbtn,
+.submitbtn {
   background-color: #fff;
   color: #606060;
   font-weight: normal;
   border-radius: 4px;
-  padding:.25rem 1rem .25rem 1rem;
-
-
+  padding: 0.25rem 1rem 0.25rem 1rem;
   cursor: pointer;
 }
 
-.login-button:hover, .cancelbtn:hover, .signupbtn:hover{
+.login-button:hover,
+.cancelbtn:hover,
+.signupbtn:hover,
+.submitbtn:hover {
   color: #369;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   font-weight: bold;
@@ -256,7 +268,8 @@ footer p{
   transition: all 0.2s ease-out;
 }
 
-.sidenav-button-active, .main-menu-active{
+.sidenav-button-active,
+.main-menu-active {
   font-weight: bold;
 }
 
@@ -316,11 +329,9 @@ footer p{
   transition: 0.5s ease-out;
 }
 
-
 .buy-sell-form {
   display: grid;
 }
-
 
 /*Forum*/
 
@@ -348,7 +359,7 @@ footer p{
   color: #fff;
 }
 
-.forum-title::after{
+.forum-title::after {
   float: right;
   font-weight: bolder;
   font-size: 1.5rem;
@@ -378,11 +389,11 @@ footer p{
 
 /*Sign-up Page*/
 
-.sign-up-main{
+.sign-up-main {
   display: grid;
 }
 
-.sign-up{
+.sign-up {
   width: 400px;
   border-radius: 4px;
   background-color: #ececec;
@@ -392,7 +403,8 @@ footer p{
   margin: 1rem;
 }
 
-input[type=text], input[type=password] {
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 1rem;
   margin: 5px 0 20px 0;
@@ -400,29 +412,26 @@ input[type=text], input[type=password] {
   border: none;
   background: #fff;
   border-radius: 4px;
-  border: solid 1px #606060
+  border: solid 1px #606060;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
   background-color: #fff;
   outline: none;
   border-radius: 4px;
 }
 
-hr {
-  border: 1px solid #606060;
-  margin-bottom: 1rem;
-}
-
-.cancelbtn{
+.cancelbtn {
   grid-column: 1/2;
 }
 
-.signupbtn{
+.signupbtn {
   grid-column: 2/3;
 }
 
-.cancelbtn, .signupbtn {
+.cancelbtn,
+.signupbtn {
   width: 45%;
 }
 
@@ -437,7 +446,6 @@ hr {
 }
 
 /*General*/
-
 
 .fuzzy-edge {
   width: 100%;
