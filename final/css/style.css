@@ -33,10 +33,6 @@ h2,
   text-align: center;
 }
 
-form {
-  margin: 0.5rem;
-}
-
 select,
 button,
 label,
@@ -180,7 +176,6 @@ footer p {
 
 .home-slideshow {
   position: relative;
-  background: #ececec;
 }
 
 .slides {
@@ -243,6 +238,7 @@ footer p {
 .sidenav {
   background-color: #ececec;
   padding: 2rem;
+  display: grid;
 }
 .sidenav-button {
   text-decoration: none;
@@ -261,6 +257,7 @@ footer p {
 .sidenav a {
   text-decoration: none;
   color: #fff;
+  justify-self: center;
 }
 .sidenav-button:hover {
   transform: scale(1.1);
@@ -335,12 +332,10 @@ footer p {
 /*Forum*/
 
 .forum-section {
-  display: grid;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .forum-header {
-  background-color: #ececec;
   padding: 1rem;
   display: grid;
   grid-gap: 1rem;
@@ -408,7 +403,6 @@ input[type="password"] {
   padding: 1rem;
   margin: 5px 0 20px 0;
   display: inline-block;
-  border: none;
   background: #fff;
   border-radius: 4px;
   border: solid 1px #606060;
@@ -437,6 +431,9 @@ input[type="password"]:focus {
 .sign-up-form {
   padding: 1rem;
 }
+.sign-up-form p {
+  text-align: center;
+}
 
 .clearfix::after {
   content: "";
@@ -446,10 +443,6 @@ input[type="password"]:focus {
 
 /*General*/
 
-.fuzzy-edge {
-  width: 100%;
-  border-radius: 4px;
-}
 .float-left,
 .float-right {
   margin-bottom: 1rem;
