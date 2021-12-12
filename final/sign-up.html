@@ -31,7 +31,9 @@
         </div>
         <div class="header-title">
           <h1>Classic Car Connection</h1>
-          <div class="login-button">Login</div>
+          <div class="login-button">
+            Login<a href="sign-up.html"><span class="button-span"></span></a>
+          </div>
         </div>
         <div class="header-nav">
           <nav>
@@ -61,11 +63,10 @@
       <main class="sign-up-main">
         <h2>Sign-Up Page</h2>
         <div class="sign-up">
-          <form action="index.html" method="dialog" border: 1px solid #606060">
+          <form action="index.html" method="dialog">
             <div class="sign-up-form">
               <p>Please Fill Out to Join!</p>
               <hr />
-
               <label for="email"><b>Email</b></label>
               <input
                 type="text"
@@ -91,8 +92,20 @@
               />
 
               <div class="sign-up-submit">
-                <button type="button" class="cancelbtn" onclick="location.href='sign-up.html';" >Cancel</button>
-                <button type="submit" class="signupbtn" onclick="location.href='index.html';" >Sign-Up</button>
+                <button
+                  type="button"
+                  class="cancelbtn"
+                  onclick="location.href='sign-up.html';"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  class="signupbtn"
+                  onclick="location.href='index.html';"
+                >
+                  Sign-Up
+                </button>
               </div>
             </div>
           </form>
@@ -100,8 +113,9 @@
       </main>
       <footer>
         <p>&#169; 2021 Classic Car Connection - Robert Odell - WDD130</p>
-        <div class="login-button" onclick="location.href='sign-up.html';">
+        <div class="login-button">
           Sign-up
+          <a href="sign-up.html"><span class="button-span"></span></a>
         </div>
       </footer>
     </div>
