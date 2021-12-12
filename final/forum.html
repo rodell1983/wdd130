@@ -31,7 +31,10 @@
         </div>
         <div class="header-title">
           <h1>Classic Car Connection</h1>
-          <div class="login-button">Login<a href="sign-up.html"><span class="button-span"></span></a></div>
+          <div class="login-button">
+            Login
+            <a href="sign-up.html"><span class="button-span"></span></a>
+          </div>
         </div>
         <div class="header-nav">
           <nav>
@@ -73,7 +76,11 @@
                 ground.<br />
                 7 - Record mile and date for the next change interval.
               </p>
-              <div class="forum-reply" onclick="location.href='sign-up.html';">Reply</div>
+              <div class="forum-reply">
+                Reply<a href="sign-up.html"
+                  ><span class="button-span"></span
+                ></a>
+              </div>
             </div>
           </div>
           <div class="forum-section">
@@ -89,7 +96,11 @@
                 coats of base coat followed by 3-5 coats of clear. Then cut and
                 buff.
               </p>
-              <div class="forum-reply" onclick="location.href='sign-up.html';">Reply</div>
+              <div class="forum-reply">
+                Reply<a href="sign-up.html"
+                  ><span class="button-span"></span
+                ></a>
+              </div>
             </div>
           </div>
           <div class="forum-section">
@@ -101,14 +112,20 @@
                 mix up the wires. Gap the plugs to spec (Most come pre gapped).
                 Put a thin coat of anti-seize on the thread then torque to spec.
               </p>
-              <div class="forum-reply" onclick="location.href='sign-up.html';">Reply</div>
+              <div class="forum-reply">
+                Reply<a href="sign-up.html"
+                  ><span class="button-span"></span
+                ></a>
+              </div>
             </div>
           </div>
         </div>
       </main>
       <footer>
         <p>&#169; 2021 Classic Car Connection - Robert Odell - WDD130</p>
-        <div class="login-button">Sign-up<a href="sign-up.html"><span class="button-span"></span></a></div>
+        <div class="login-button">
+          Sign-up<a href="sign-up.html"><span class="button-span"></span></a>
+        </div>
       </footer>
     </div>
     <script>
@@ -157,13 +174,12 @@
       for (var i = 0; i < acc.length; i++) {
         acc[i].classList.add("showminus");
         acc[i].addEventListener("click", function () {
-
           var el = this.nextElementSibling;
 
           if (el.style.display === "none") {
-              unfade(el);
-              this.classList.remove("showplus");
-              this.classList.add("showminus");
+            unfade(el);
+            this.classList.remove("showplus");
+            this.classList.add("showminus");
           } else {
             fade(el);
             this.classList.add("showplus");

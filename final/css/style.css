@@ -35,14 +35,18 @@ h2,
 
 select,
 button,
-label,
 input {
   padding: 0.5rem;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+label{
+  padding: 0.5rem;
 }
 
 hr {
-  border: 3px solid #606060;
+  border: 2px solid #606060;
   margin-bottom: 1rem;
 }
 
@@ -168,8 +172,6 @@ footer p {
 
 .slide-img {
   width: 400px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /** Slideshow **/
@@ -327,8 +329,7 @@ footer p {
 }
 .sell-img {
   width: 250px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  
 }
 
 .sell-img:hover {
@@ -386,15 +387,17 @@ footer p {
   text-align: center;
   padding: 4px;
   cursor: pointer;
+  position: relative;
 }
 
 .forum-reply:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   color: #ececec;
 }
 
 /*Sign-up Page*/
 
-.sign-up-main {
+.sign-up-main, .sign-up-submit {
   display: grid;
 }
 
@@ -436,13 +439,14 @@ input[type="password"]:focus {
 
 .cancelbtn,
 .signupbtn {
-  width: 45%;
+  width: 70%;
+  justify-self: center;
 }
 
 .sign-up-form {
   padding: 1rem;
 }
-.sign-up-form p {
+.sign-up-form h3 {
   text-align: center;
 }
 
@@ -474,4 +478,9 @@ input[type="password"]:focus {
 
 .showplus:after {
   content: "\002B";
+}
+
+.style-img{
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
