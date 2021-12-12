@@ -30,18 +30,27 @@
             />
           </a>
         </div>
-        <div class="header-title"><h1>Classic Car Connection</h1></div>
+        <div class="header-title">
+          <h1>Classic Car Connection</h1>
+          <div class="login-button" onclick="location.href='sign-up.html';">Login</div>
+        </div>
         <div class="header-nav">
           <nav>
             <ul class="main-menu">
-              <li>
-                <a href="index.html" title="Home - Classic Car Connection">Home</a>
+              <li class="main-menu-active">
+                <a href="index.html" title="Home - Classic Car Connection"
+                  >Home</a
+                >
               </li>
               <li>
-                <a href="history.html" title="History - Timeline of Cars">History</a>
+                <a href="history.html" title="History - Timeline of Cars"
+                  >History</a
+                >
               </li>
               <li>
-                <a href="buy-sell.html" title="Buy/Sell - Marketplace for Cars">Buy/Sell</a>
+                <a href="buy-sell.html" title="Buy/Sell - Marketplace for Cars"
+                  >Buy/Sell</a
+                >
               </li>
               <li>
                 <a href="forum.html" title="Forum - Helpful tips">Forum</a>
@@ -53,20 +62,32 @@
       <main class="main-home">
         <div class="home-slideshow">
           <div class="slides">
-            <img src="images/mustang-rear.jpg" alt="Mustang Reiw View" />
+            <img
+              class="slide-img"
+              src="images/mustang-rear.jpg"
+              alt="Mustang Reiw View"
+            />
             <p>
               Learn about the history of cars as you search through the decades
             </p>
           </div>
           <div class="slides">
-            <img src="images/camaro-front.jpg" alt="Camaro Front End" />
+            <img
+              class="slide-img"
+              src="images/camaro-front.jpg"
+              alt="Camaro Front End"
+            />
             <p>
               Looking to Buy or Sell a classic car? Classic Car Connection has
               you covered.
             </p>
           </div>
           <div class="slides">
-            <img src="images/challenger.jpg" alt="Dodge Challenger" />
+            <img
+              class="slide-img"
+              src="images/challenger.jpg"
+              alt="Dodge Challenger"
+            />
             <p>Chat with fellow car enthusiast on our forum.</p>
           </div>
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -80,17 +101,17 @@
       </main>
       <footer>
         <p>&#169; 2021 Classic Car Connection - Robert Odell - WDD130</p>
+        <div class="login-button" onclick="location.href='sign-up.html';">Sign-up</div>
       </footer>
     </div>
     <script>
       var slideIndex = 1;
       showSlides(slideIndex);
-      autoSlides();
+      //autoSlides();
 
-      function autoSlides(){
+      function autoSlides() {
         plusSlides(1);
         setTimeout(autoSlides, 5000); // Change image every 5 seconds
-
       }
 
       function plusSlides(n) {

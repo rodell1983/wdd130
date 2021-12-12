@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Classic Car Connection</title>
+    <title>Classic Car Connection - Marketplace</title>
     <meta
       name="description"
       content="Classic car connection allows you to locate the car of your dreams or post one for sale."
@@ -29,7 +29,10 @@
             />
           </a>
         </div>
-        <div class="header-title"><h1>Classic Car Connection</h1></div>
+        <div class="header-title">
+          <h1>Classic Car Connection</h1>
+          <div class="login-button" onclick="location.href='sign-up.html';">Login</div>
+        </div>
         <div class="header-nav">
           <nav>
             <ul class="main-menu">
@@ -39,8 +42,8 @@
               <li>
                 <a href="history.html" title="History">History</a>
               </li>
-              <li>
-                <a class="action" href="#" title="Buy/Sell">Buy/Sell</a>
+              <li class="main-menu-active">
+                <a href="buy-sell.html" title="Buy/Sell">Buy/Sell</a>
               </li>
               <li>
                 <a href="forum.html" title="Forum">Forum</a>
@@ -49,17 +52,17 @@
           </nav>
         </div>
       </header>
-      <main class="main-buy-sell">
+      <main>
         <section class="buy-sell-form">
           <h2>Market Place</h2>
           <form
             class="search-form"
-            action="/my-handling-form-page"
-            method="post"
+            action="sign-up.html"
+            method="get"
           >
             <ul>
               <li>
-                <label for="name">Make</label>
+                <label for="select">Make</label>
                 <select name="make">
                   <option value="">Ford</option>
                   <option value="">Chevy</option>
@@ -67,7 +70,7 @@
                 </select>
               </li>
               <li>
-                <label for="mail">Model</label>
+                <label for="select">Model</label>
                 <select name="make">
                   <option value="">Mustang</option>
                   <option value="">Camaro</option>
@@ -133,6 +136,7 @@
       </main>
       <footer>
         <p>&#169; 2021 Classic Car Connection - Robert Odell - WDD130</p>
+        <div class="login-button" onclick="location.href='sign-up.html';">Sign-up</div>
       </footer>
     </div>
   </body>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classic Car Connection - Sign-Up</title>
+    <meta
+      name="description"
+      content="Sign in page for Classic Car Connections. Opens up all the features to the site"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noticia+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="header-logo">
+          <a href="index.html" title="Home">
+            <img
+              class="logo"
+              src="images/ccc_logo_nt.png"
+              alt="Classic Car Connection logo"
+            />
+          </a>
+        </div>
+        <div class="header-title">
+          <h1>Classic Car Connection</h1>
+          <div class="login-button">Login</div>
+        </div>
+        <div class="header-nav">
+          <nav>
+            <ul class="main-menu">
+              <li>
+                <a href="index.html" title="Home - Classic Car Connection"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="history.html" title="History - Timeline of Cars"
+                  >History</a
+                >
+              </li>
+              <li>
+                <a href="buy-sell.html" title="Buy/Sell - Marketplace for Cars"
+                  >Buy/Sell</a
+                >
+              </li>
+              <li>
+                <a href="forum.html" title="Forum - Helpful tips">Forum</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="sign-up-main">
+        <h2>Sign-Up Page</h2>
+        <div class="sign-up">
+            <form action="action_page.php" style="border:1px solid #606060">
+                <div class="sign-up-form">
+                  <p>Please Fill Out to Join!</p>
+                  <hr>
+
+                  <label for="email"><b>Email</b></label>
+                  <input type="text" placeholder="Enter Email" name="email" required>
+              
+                  <label for="password"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" required>
+              
+                  <label for="password-repeat"><b>Repeat Password</b></label>
+                  <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+              
+                  <div class="sign-up-submit">
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign-Up</button>
+                  </div>
+                </div>
+              </form>
+        </div>
+      </main>
+      <footer>
+        <p>&#169; 2021 Classic Car Connection - Robert Odell - WDD130</p>
+        <div class="login-button" onclick="location.href='sign-up.html';">
+          Sign-up
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

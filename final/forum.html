@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Classic Car Connection</title>
+    <title>Classic Car Connection - Forum</title>
     <meta
       name="description"
       content="Classic car connection has an active forum. Search a wide array of topics and chat with fellow car enthusiast"
@@ -29,7 +29,10 @@
             />
           </a>
         </div>
-        <div class="header-title"><h1>Classic Car Connection</h1></div>
+        <div class="header-title">
+          <h1>Classic Car Connection</h1>
+          <div class="login-button" onclick="location.href='sign-up.html';">Login</div>
+        </div>
         <div class="header-nav">
           <nav>
             <ul class="main-menu">
@@ -42,14 +45,14 @@
               <li>
                 <a href="buy-sell.html" title="Buy/Sell">Buy/Sell</a>
               </li>
-              <li>
+              <li class="main-menu-active">
                 <a href="forum.html" title="Forum">Forum</a>
               </li>
             </ul>
           </nav>
         </div>
       </header>
-      <main class="main">
+      <main>
         <h2>Forum</h2>
         <div class="forum-header">
           <h3>How to Tutorials</h3>
@@ -58,12 +61,19 @@
             <div class="forum-body">
               <p>User:Admin</p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
-                pariatur perferendis ea dignissimos maxime sed veniam dolore
-                illum impedit dicta eius alias id corporis vitae ut magnam,
-                iusto reiciendis culpa.
+                1 - Identify what oil you need and how much.<br />
+                2 - Gather your supplies (Oil, Filter, Catch Pan, Wrenches
+                and/or Sockets, Rags, Any Specialty tools.<br />
+                3 - Set parking brake, chaulk tire, jack up car and support with
+                proper stands.<br />
+                4 - Place pan under the plug and filter, remove drain plug then
+                undo filter and allow both to drain.<br />
+                5 - Clean any excess oil and replace filter and drain plug.<br />
+                6 - Add new oil then check level once the car is on flat
+                ground.<br />
+                7 - Record mile and date for the next change interval.
               </p>
-              <div class="forum-reply">Reply</div>
+              <div class="forum-reply" onclick="location.href='sign-up.html';">Reply</div>
             </div>
           </div>
           <div class="forum-section">
@@ -71,12 +81,15 @@
             <div class="forum-body">
               <p>User:Admin</p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
-                pariatur perferendis ea dignissimos maxime sed veniam dolore
-                illum impedit dicta eius alias id corporis vitae ut magnam,
-                iusto reiciendis culpa.
+                The best thing to do is strip the car down to bare metal. Then
+                do all the bodywork (Keep any fillter to a maximum of 1/8 inch).
+                Block sand the entire car making several passes from alternating
+                directions (Be sure to use guide coat). Then spray the final
+                coat of primer followed by sealer. At this point you can do 2-3
+                coats of base coat followed by 3-5 coats of clear. Then cut and
+                buff.
               </p>
-              <div class="forum-reply">Reply</div>
+              <div class="forum-reply" onclick="location.href='sign-up.html';">Reply</div>
             </div>
           </div>
           <div class="forum-section">
@@ -84,19 +97,80 @@
             <div class="forum-body">
               <p>User:Admin</p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
-                pariatur perferendis ea dignissimos maxime sed veniam dolore
-                illum impedit dicta eius alias id corporis vitae ut magnam,
-                iusto reiciendis culpa.
+                Best practice is to change one plug at a time so that you dont
+                mix up the wires. Gap the plugs to spec (Most come pre gapped).
+                Put a thin coat of anti-seize on the thread then torque to spec.
               </p>
-              <div class="forum-reply">Reply</div>
+              <div class="forum-reply" onclick="location.href='sign-up.html';">Reply</div>
             </div>
           </div>
         </div>
       </main>
       <footer>
         <p>&#169; 2021 Classic Car Connection - Robert Odell - WDD130</p>
+        <div class="login-button" onclick="location.href='sign-up.html';">Sign-up</div>
       </footer>
     </div>
+    <script>
+      function displayByClass(show, name) {
+        var els = document.getElementsByClassName(name);
+        for (var i = 0; i < els.length; i++) {
+          var el = document.getElementsByClassName(name)[i];
+          if (show) {
+            el.style.display = "grid";
+          } else {
+            el.style.display = "none";
+          }
+        }
+      }
+
+      function unfade(el) {
+        var op = 0.1; // initial opacity
+        el.style.opacity = 0;
+        el.style.display = "grid";
+        var timer = setInterval(function () {
+          if (op >= 1) {
+            clearInterval(timer);
+          }
+          el.style.opacity = op;
+          el.style.filter = "alpha(opacity=" + op * 100 + ")";
+          op += op * 0.1;
+        }, 10);
+      }
+
+      function fade(el) {
+        var op = 1; // initial opacity
+        el.style.opacity = op;
+        var timer = setInterval(function () {
+          if (op <= 0.1) {
+            clearInterval(timer);
+            el.style.display = "none";
+          }
+          el.style.opacity = op;
+          el.style.filter = "alpha(opacity=" + op * 100 + ")";
+          op -= op * 0.1;
+        }, 10);
+      }
+
+      var acc = document.getElementsByClassName("forum-title");
+
+      for (var i = 0; i < acc.length; i++) {
+        acc[i].classList.add("showminus");
+        acc[i].addEventListener("click", function () {
+
+          var el = this.nextElementSibling;
+
+          if (el.style.display === "none") {
+              unfade(el);
+              this.classList.remove("showplus");
+              this.classList.add("showminus");
+          } else {
+            fade(el);
+            this.classList.add("showplus");
+            this.classList.remove("showminus");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
