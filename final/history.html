@@ -31,7 +31,10 @@
         </div>
         <div class="header-title">
           <h1>Classic Car Connection</h1>
-          <div class="login-button" onclick="location.href='sign-up.html';">Login</div>
+          <div class="login-button">
+            Login
+            <a href="sign-up.html"><span class="button-span"></span></a>
+          </div>
         </div>
         <div class="header-nav">
           <nav>
@@ -54,12 +57,20 @@
       </header>
       <aside class="history-sidenav">
         <h2>Cars by Decade</h2>
-        <ul class="sidenav">
-          <a href="history1970.html"><li class="sidenav-button">1970's</li></a>
-          <a href="history.html"> <li class="sidenav-button sidenav-button-active">1960's</li></a>
-          <li class="sidenav-button">1950's</li>
-          <li class="sidenav-button">1940's</li>
-        </ul>
+        <nav>
+          <ul class="sidenav">
+            <li class="sidenav-button sidenav-button-active">
+              1970's
+              <a href="history1970.html"><span class="button-span"></span></a>
+            </li>
+            <li class="sidenav-button">
+              1960's
+              <a href="history.html"><span class="button-span"></span></a>
+            </li>
+            <li class="sidenav-button">1950's</li>
+            <li class="sidenav-button">1940's</li>
+          </ul>
+        </nav>
       </aside>
       <main class="history-main">
         <h2>History 1960-1969</h2>
@@ -108,7 +119,10 @@
       </main>
       <footer>
         <p>&#169; 2021 Classic Car Connection - Robert Odell - WDD130</p>
-        <div class="login-button" onclick="location.href='sign-up.html';">Sign-up</div>
+        <div class="login-button" >
+          Sign-up
+          <a href="sign-up.html"><span class="button-span"></span></a>
+        </div>
       </footer>
     </div>
   </body>
