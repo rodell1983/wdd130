@@ -269,8 +269,9 @@ footer p {
   padding: 1rem;
 }
 
-.sidenav-button a {
+.sidenav-button a, .forum-reply a{
   text-decoration: none;
+  color: #fff;
 }
 
 .button-span {
