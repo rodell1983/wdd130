@@ -131,7 +131,7 @@ footer p {
 
 .main-menu li a:hover {
   background-color: #606060;
-  color: #ececec;
+  color: #fff;
   transform: scale(1.1);
   font-weight: bold;
 }
@@ -179,6 +179,7 @@ footer p {
 .cancelbtn:hover,
 .signupbtn:hover,
 .submitbtn:hover {
+  color: #369;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -196,8 +197,8 @@ footer p {
 
 .slides {
   display: none;
-  padding: 80px;
   text-align: center;
+  padding: 1rem;
 }
 
 .prev,
@@ -267,11 +268,13 @@ footer p {
   cursor: pointer;
   text-align: center;
   padding: 1rem;
+  position: relative;
 }
 
 .sidenav-button a, .forum-reply a{
   text-decoration: none;
   color: #fff;
+  
 }
 
 .button-span {
