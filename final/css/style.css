@@ -406,6 +406,9 @@ footer p {
 
 .forum-reply:hover {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.forum-reply a:hover{
   color: #ececec;
 }
 
