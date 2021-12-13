@@ -143,6 +143,11 @@ footer p {
 
 /*Home Page*/
 
+
+.main-home {
+  display: grid;
+}
+
 .slide-img {
   width: 400px;
 }
@@ -209,17 +214,13 @@ footer p {
 
 /*History Pages*/
 
-.sidenav-title {
-  float: left;
-  width: 175px;
-}
-
 .sidenav {
   padding: 2rem;
   display: grid;
 }
 .sidenav-button {
   background-color: #606060;
+  color: #ececec;
   font-size: 1.2em;
   list-style-type: none;
   margin-bottom: 1rem;
@@ -227,8 +228,15 @@ footer p {
   width: 100px;
   justify-self: center;
   cursor: pointer;
+  text-align: center;
   padding: 1rem;
   position: relative;
+}
+
+.sidenav-button a,
+.forum-reply a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .button-span {
@@ -242,6 +250,7 @@ footer p {
 .sidenav a {
   text-decoration: none;
   color: #fff;
+  justify-self: center;
 }
 .sidenav-button:hover {
   transform: scale(1.1);
@@ -253,6 +262,10 @@ footer p {
   font-weight: bold;
 }
 
+.history-sidenav {
+  float: left;
+  width: 200px;
+}
 .history-main {
   display: grid;
   padding-left: 1rem;
